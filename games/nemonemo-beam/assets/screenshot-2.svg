@@ -1,0 +1,31 @@
+<svg width="300" height="600" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="screen-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+    </linearGradient>
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="300" height="600" fill="url(#screen-bg)"/>
+  <rect x="10" y="10" width="280" height="580" fill="none" stroke="#333" stroke-width="2" rx="20"/>
+  <!-- Game Over Screen -->
+  <text x="150" y="120" text-anchor="middle" fill="#FF4444" font-family="Orbitron, monospace" font-size="24" font-weight="bold" filter="url(#neon-glow)">GAME OVER</text>
+  <text x="150" y="160" text-anchor="middle" fill="#FFE81A" font-family="Rajdhani, sans-serif" font-size="16">FINAL SCORE: 15,420</text>
+  <text x="150" y="190" text-anchor="middle" fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="14">BEST SCORE: 28,750</text>
+  <!-- Retry button -->
+  <rect x="100" y="250" width="100" height="40" fill="none" stroke="#FFE81A" stroke-width="2" rx="8" filter="url(#neon-glow)"/>
+  <text x="150" y="275" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="14" font-weight="bold">RETRY</text>
+  <!-- Menu button -->
+  <rect x="100" y="310" width="100" height="40" fill="none" stroke="#CCCCCC" stroke-width="2" rx="8"/>
+  <text x="150" y="335" text-anchor="middle" fill="#CCCCCC" font-family="Rajdhani, sans-serif" font-size="14">MENU</text>
+  <!-- Stats -->
+  <text x="150" y="400" text-anchor="middle" fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="12">PLAY TIME: 02:34</text>
+  <text x="150" y="425" text-anchor="middle" fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="12">BEAMS FIRED: 127</text>
+  <text x="150" y="450" text-anchor="middle" fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="12">OBSTACLES DODGED: 89</text>
+</svg>

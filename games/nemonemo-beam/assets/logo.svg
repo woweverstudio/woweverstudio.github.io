@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111111;stop-opacity:1" />
+    </linearGradient>
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="200" height="200" fill="url(#logo-bg)" rx="20"/>
+  <!-- NemoNemo Beam Logo -->
+  <text x="100" y="70" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="28" font-weight="bold" filter="url(#neon-glow)">NEMO</text>
+  <text x="100" y="95" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="28" font-weight="bold" filter="url(#neon-glow)">NEMO</text>
+  <text x="100" y="125" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="20" font-weight="bold" filter="url(#neon-glow)">BEAM</text>
+
+  <!-- Beam effect -->
+  <line x1="50" y1="140" x2="150" y2="140" stroke="#FFE81A" stroke-width="4" filter="url(#neon-glow)">
+    <animate attributeName="stroke-width" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="100" cy="140" r="8" fill="#FFE81A" filter="url(#neon-glow)">
+    <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

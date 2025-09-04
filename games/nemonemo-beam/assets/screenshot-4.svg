@@ -1,0 +1,48 @@
+<svg width="300" height="600" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="screen-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+    </linearGradient>
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="300" height="600" fill="url(#screen-bg)"/>
+  <rect x="10" y="10" width="280" height="580" fill="none" stroke="#333" stroke-width="2" rx="20"/>
+  <!-- Leaderboard Screen -->
+  <text x="150" y="60" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="20" font-weight="bold">LEADERBOARD</text>
+  <!-- Top players -->
+  <g fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="14">
+    <text x="40" y="110">1.</text>
+    <text x="70" y="110">NEO_RUNNER</text>
+    <text x="250" y="110">45,230</text>
+    <text x="40" y="140">2.</text>
+    <text x="70" y="140">BEAM_MASTER</text>
+    <text x="250" y="140">42,180</text>
+    <text x="40" y="170">3.</text>
+    <text x="70" y="170">NEON_NINJA</text>
+    <text x="250" y="170">38,950</text>
+    <text x="40" y="200">4.</text>
+    <text x="70" y="200">ARC_PLAYER</text>
+    <text x="250" y="200">35,670</text>
+    <text x="40" y="230">5.</text>
+    <text x="70" y="230">DODGE_KING</text>
+    <text x="250" y="230">32,410</text>
+  </g>
+  <!-- Current player -->
+  <rect x="30" y="280" width="240" height="30" fill="rgba(255, 232, 26, 0.1)" stroke="#FFE81A" stroke-width="1" rx="5"/>
+  <g fill="#FFE81A" font-family="Rajdhani, sans-serif" font-size="14">
+    <text x="40" y="300">127.</text>
+    <text x="70" y="300">YOU</text>
+    <text x="250" y="300">15,420</text>
+  </g>
+  <!-- Weekly/Monthly toggle -->
+  <text x="100" y="360" fill="#CCCCCC" font-family="Rajdhani, sans-serif" font-size="12">WEEKLY</text>
+  <text x="200" y="360" fill="#FFE81A" font-family="Rajdhani, sans-serif" font-size="12" font-weight="bold">ALL TIME</text>
+  <line x1="180" y1="370" x2="220" y2="370" stroke="#FFE81A" stroke-width="2"/>
+</svg>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wowever Studio - Neon Arcade Experiences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">WOWEVER</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#feedback" class="nav-link">Feedback</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Wowever Studio</h1>
+            <p class="hero-subtitle">We craft neon-lit arcade experiences.</p>
+            <a href="#games" class="cta-button">Explore Games</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="about-description">
+                Wowever Studio is an indie game development company passionate about creating immersive,
+                fast-paced arcade experiences that capture the magic of classic gaming with modern twists.
+            </p>
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <h3>⚡ Fast Gameplay</h3>
+                    <p>Lightning-quick action that keeps players engaged from start to finish.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🎮 Player-First</h3>
+                    <p>Every decision we make puts the player experience at the forefront.</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🌟 Arcade Feel</h3>
+                    <p>Classic arcade aesthetics with contemporary mechanics and visuals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games">
+        <div class="container">
+            <h2 class="section-title">Our Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/game1.svg" alt="NemoNemo Beam" loading="lazy">
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">NemoNemo Beam</h3>
+                        <p class="game-tagline">Dodge & Beam • Neon Arcade</p>
+                        <a href="./games/nemonemo-beam/index.html" class="game-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/game2.svg" alt="Zombie Rush" loading="lazy">
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Zombie Rush</h3>
+                        <p class="game-tagline">Survival Runner • Quick Sessions</p>
+                        <a href="./games/zombie-rush/index.html" class="game-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/game3.svg" alt="Attack on Square" loading="lazy">
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Attack on Square</h3>
+                        <p class="game-tagline">Physics Brawler • Skill Shots</p>
+                        <a href="./games/attack-on-square/index.html" class="game-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback">
+        <div class="container">
+            <h2 class="section-title">Player Feedback</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Wowever Studio's games capture that perfect arcade feeling. Neon Runner had me hooked for hours!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <span class="author-name">Alex Chen</span>
+                        <span class="author-handle">@arcade_alex</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The attention to detail in their pixel art and sound design is incredible. True indie gems."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <span class="author-name">Sarah Kim</span>
+                        <span class="author-handle">@pixel_sarah</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Finally, games that understand what makes arcade gaming great. Can't wait for their next release!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <span class="author-name">Mike Rodriguez</span>
+                        <span class="author-handle">@retro_mike</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Email:</strong> contact@wowever.studio</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">YouTube</a>
+                        <a href="#" class="social-link">Itch.io</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Wowever Studio</h3>
+                </div>
+                <div class="footer-nav">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#games" class="footer-link">Games</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">🐦</a>
+                    <a href="#" class="social-icon">💬</a>
+                    <a href="#" class="social-icon">📺</a>
+                    <a href="#" class="social-icon">🎮</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wowever Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

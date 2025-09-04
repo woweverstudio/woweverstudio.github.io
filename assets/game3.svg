@@ -1,0 +1,84 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="game3-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D0D0D;stop-opacity:1" />
+    </linearGradient>
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#game3-bg)"/>
+  <!-- Arena boundary -->
+  <ellipse cx="200" cy="150" rx="150" ry="80" fill="none" stroke="#FFE81A" stroke-width="3" opacity="0.6"/>
+  <!-- Inner arena -->
+  <ellipse cx="200" cy="150" rx="120" ry="60" fill="none" stroke="#FFE81A" stroke-width="2" opacity="0.8"/>
+  <!-- Center pulse -->
+  <circle cx="200" cy="150" r="15" fill="#FFE81A" filter="url(#neon-glow)">
+    <animate attributeName="r" values="10;20;10" dur="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Player positions -->
+  <g fill="#FFE81A" filter="url(#neon-glow)">
+    <!-- Player 1 -->
+    <circle cx="120" cy="120" r="8">
+      <animate attributeName="cx" values="120;140;120" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Player 2 -->
+    <circle cx="280" cy="120" r="8">
+      <animate attributeName="cx" values="280;260;280" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Player 3 -->
+    <circle cx="120" cy="180" r="8">
+      <animate attributeName="cy" values="180;160;180" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Player 4 -->
+    <circle cx="280" cy="180" r="8">
+      <animate attributeName="cy" values="180;200;180" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- Energy beams -->
+  <g stroke="#FFE81A" stroke-width="2" opacity="0.6" filter="url(#neon-glow)">
+    <line x1="120" y1="120" x2="200" y2="150">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="280" y1="120" x2="200" y2="150">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="120" y1="180" x2="200" y2="150">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="280" y1="180" x2="200" y2="150">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.7s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  <!-- Floating particles -->
+  <g fill="#FFE81A" opacity="0.4">
+    <circle cx="80" cy="80" r="2">
+      <animateMotion dur="3s" repeatCount="indefinite">
+        <path d="M 0 0 Q 50 -20 100 0"/>
+      </animateMotion>
+    </circle>
+    <circle cx="320" cy="80" r="2">
+      <animateMotion dur="4s" repeatCount="indefinite">
+        <path d="M 0 0 Q -50 -20 -100 0"/>
+      </animateMotion>
+    </circle>
+    <circle cx="80" cy="220" r="2">
+      <animateMotion dur="3.5s" repeatCount="indefinite">
+        <path d="M 0 0 Q 50 20 100 0"/>
+      </animateMotion>
+    </circle>
+    <circle cx="320" cy="220" r="2">
+      <animateMotion dur="4.5s" repeatCount="indefinite">
+        <path d="M 0 0 Q -50 20 -100 0"/>
+      </animateMotion>
+    </circle>
+  </g>
+  <!-- Title -->
+  <text x="200" y="260" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="20" font-weight="bold" filter="url(#neon-glow)">PULSE ARENA</text>
+</svg>

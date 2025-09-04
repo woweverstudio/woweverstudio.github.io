@@ -1,0 +1,10 @@
+<svg width="300" height="600" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="600" fill="#000"/>
+  <rect x="10" y="10" width="280" height="580" fill="none" stroke="#333" stroke-width="2" rx="20"/>
+  <text x="150" y="60" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="20" font-weight="bold">LEADERBOARD</text>
+  <g fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="14">
+    <text x="40" y="110">1.</text>
+    <text x="70" y="110">PHYSICS_MASTER</text>
+    <text x="250" y="110">12,450</text>
+  </g>
+</svg>

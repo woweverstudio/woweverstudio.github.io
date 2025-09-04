@@ -1,0 +1,7 @@
+<svg width="300" height="600" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="600" fill="#000"/>
+  <rect x="10" y="10" width="280" height="580" fill="none" stroke="#333" stroke-width="2" rx="20"/>
+  <text x="150" y="80" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="22" font-weight="bold">LEVEL SELECT</text>
+  <rect x="75" y="120" width="60" height="60" fill="none" stroke="#FFE81A" stroke-width="3" rx="10"/>
+  <text x="105" y="155" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="16" font-weight="bold">12</text>
+</svg>

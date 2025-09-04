@@ -1,0 +1,23 @@
+<svg width="300" height="600" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="screen-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="600" fill="url(#screen-bg)"/>
+  <rect x="10" y="10" width="280" height="580" fill="none" stroke="#333" stroke-width="2" rx="20"/>
+  <!-- Leaderboard -->
+  <text x="150" y="60" text-anchor="middle" fill="#FFE81A" font-family="Orbitron, monospace" font-size="20" font-weight="bold">LEADERBOARD</text>
+  <g fill="#FFFFFF" font-family="Rajdhani, sans-serif" font-size="14">
+    <text x="40" y="110">1.</text>
+    <text x="70" y="110">SURVIVOR_X</text>
+    <text x="250" y="110">8,542m</text>
+    <text x="40" y="140">2.</text>
+    <text x="70" y="140">ZOMBIE_HUNTER</text>
+    <text x="250" y="140">7,231m</text>
+    <text x="40" y="170">3.</text>
+    <text x="70" y="170">RUNNER_99</text>
+    <text x="250" y="170">6,845m</text>
+  </g>
+</svg>
