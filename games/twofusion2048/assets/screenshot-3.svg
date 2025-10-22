@@ -1,0 +1,25 @@
+<svg width="250" height="200" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="200" rx="15" fill="#f8fafc"/>
+  <rect x="10" y="10" width="230" height="180" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">High Score Mode</text>
+
+  <!-- Achievement badges -->
+  <g transform="translate(25, 35)">
+    <circle cx="30" cy="30" r="20" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="30" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#2563eb">🏆</text>
+    <text x="30" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">2048</text>
+    <text x="30" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Master</text>
+
+    <circle cx="90" cy="30" r="20" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="90" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#16a34a">⭐</text>
+    <text x="90" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Speed</text>
+    <text x="90" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Runner</text>
+
+    <circle cx="150" cy="30" r="20" fill="#fef3c7" stroke="#d97706"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#d97706">🎯</text>
+    <text x="150" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Perfect</text>
+    <text x="150" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Moves</text>
+  </g>
+
+  <text x="125" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Achievements Unlocked</text>
+</svg>

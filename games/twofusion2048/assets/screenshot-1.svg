@@ -1,0 +1,27 @@
+<svg width="250" height="200" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="200" rx="15" fill="#f8fafc"/>
+  <rect x="10" y="10" width="230" height="180" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">TwoFusion2048</text>
+
+  <!-- Game grid -->
+  <g transform="translate(25, 35)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="22.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2563eb">2</text>
+
+    <rect x="50" y="0" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="72.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2563eb">4</text>
+
+    <rect x="100" y="0" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="122.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2563eb">8</text>
+
+    <rect x="150" y="0" width="45" height="35" rx="5" fill="#dbeafe" stroke="#93c5fd"/>
+    <text x="172.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d4ed8">16</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <rect x="50" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <rect x="100" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <rect x="150" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+  </g>
+</svg>

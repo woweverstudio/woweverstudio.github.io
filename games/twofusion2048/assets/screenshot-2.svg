@@ -1,0 +1,30 @@
+<svg width="250" height="200" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="200" rx="15" fill="#f8fafc"/>
+  <rect x="10" y="10" width="230" height="180" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Game Progress</text>
+
+  <!-- Game grid with more advanced tiles -->
+  <g transform="translate(25, 35)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="45" height="35" rx="5" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="22.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#92400e">32</text>
+
+    <rect x="50" y="0" width="45" height="35" rx="5" fill="#fed7aa" stroke="#ea580c"/>
+    <text x="72.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9a3412">64</text>
+
+    <rect x="100" y="0" width="45" height="35" rx="5" fill="#fecaca" stroke="#dc2626"/>
+    <text x="122.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#991b1b">128</text>
+
+    <rect x="150" y="0" width="45" height="35" rx="5" fill="#fde2e2" stroke="#f87171"/>
+    <text x="172.5" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#dc2626">256</text>
+
+    <!-- Row 2 -->
+    <rect x="0" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <rect x="50" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <rect x="100" y="40" width="45" height="35" rx="5" fill="#dbeafe" stroke="#93c5fd"/>
+    <text x="122.5" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d4ed8">16</text>
+    <rect x="150" y="40" width="45" height="35" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/>
+  </g>
+
+  <text x="125" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Score: 1,248</text>
+</svg>

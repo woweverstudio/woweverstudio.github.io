@@ -1,0 +1,26 @@
+<svg width="250" height="200" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="200" rx="15" fill="#f8fafc"/>
+  <rect x="10" y="10" width="230" height="180" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="125" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Game Statistics</text>
+
+  <!-- Stats display -->
+  <g transform="translate(25, 35)">
+    <rect x="0" y="0" width="200" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="10" y="17" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Best Score:</text>
+    <text x="190" y="17" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">5,248</text>
+
+    <rect x="0" y="30" width="200" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="10" y="47" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Games Played:</text>
+    <text x="190" y="47" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">127</text>
+
+    <rect x="0" y="60" width="200" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="10" y="77" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Highest Tile:</text>
+    <text x="190" y="77" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">512</text>
+
+    <rect x="0" y="90" width="200" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="10" y="107" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Win Rate:</text>
+    <text x="190" y="107" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">73%</text>
+  </g>
+
+  <text x="125" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Track Your Progress</text>
+</svg>
