@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WowEverStudio - AI를 활용한 창작 솔루션. 앱, 노래 등 다양한 창작물을 만드는 스튜디오입니다.">
+  <meta name="keywords" content="AI, 창작, 앱 개발, 음악 제작, WowEverStudio">
+  <title>WowEverStudio - AI 창작 스튜디오</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">W</div>
+        <span>WowEverStudio</span>
+      </a>
+      
+      <nav class="nav" id="nav">
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#technologies" class="nav-link">Technologies</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </nav>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        AI 기반 <span class="highlight-bracket">창작 솔루션</span><br>
+        당신의 성공을 위한
+      </h1>
+      <p class="hero-description">
+        우리는 AI 기술을 활용하여 앱, 음악 등 독특한 창작물을 만드는 데 특화되어 있습니다. 
+        당신의 비즈니스 목표를 달성하는 데 필요한 모든 것을 제공합니다.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary btn-lg">시작하기</a>
+        <a href="#services" class="btn btn-secondary btn-lg">서비스 보기</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span>✓</span>
+          <span>AI 기반 창작</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>✓</span>
+          <span>빠른 제작</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>✓</span>
+          <span>맞춤형 솔루션</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats section" id="about">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years of<br>Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Projects<br>Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">99%</div>
+          <div class="stat-label">Customer<br>Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">// Services</div>
+        <h2 class="section-title">What We Can<br>Do For You</h2>
+        <p class="section-description">
+          AI 기술을 활용한 다양한 창작 서비스를 제공합니다. 
+          당신의 아이디어를 현실로 만들어드립니다.
+        </p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- AI Music Creation -->
+        <div class="card">
+          <h3 class="card-title">AI 음악 제작</h3>
+          <p class="card-price">From $1500</p>
+          <p class="card-description">
+            AI 기술을 활용하여 독창적인 음악을 제작합니다. 
+            장르, 분위기, 템포 등을 맞춤 설정하여 완벽한 사운드를 만들어냅니다.
+          </p>
+          <ul class="feature-list">
+            <li>맞춤형 장르 선택</li>
+            <li>빠른 제작 시간</li>
+            <li>무제한 수정</li>
+            <li>저작권 보장</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">문의하기</a>
+        </div>
+
+        <!-- App Development -->
+        <div class="card">
+          <h3 class="card-title">앱 개발</h3>
+          <p class="card-price">From $3000</p>
+          <p class="card-description">
+            AI 기반 앱 개발 서비스로 혁신적인 모바일 및 웹 애플리케이션을 제작합니다. 
+            사용자 경험을 최우선으로 생각합니다.
+          </p>
+          <ul class="feature-list">
+            <li>iOS/Android 개발</li>
+            <li>웹 애플리케이션</li>
+            <li>AI 기능 통합</li>
+            <li>반응형 디자인</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">문의하기</a>
+        </div>
+
+        <!-- AI Content Creation -->
+        <div class="card">
+          <h3 class="card-title">AI 콘텐츠 제작</h3>
+          <p class="card-price">From $1200</p>
+          <p class="card-description">
+            텍스트, 이미지, 영상 등 다양한 콘텐츠를 AI로 생성합니다. 
+            빠르고 효율적인 콘텐츠 제작이 가능합니다.
+          </p>
+          <ul class="feature-list">
+            <li>텍스트 생성</li>
+            <li>이미지 제작</li>
+            <li>영상 편집</li>
+            <li>브랜딩 지원</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">문의하기</a>
+        </div>
+
+        <!-- Consulting -->
+        <div class="card">
+          <h3 class="card-title">AI 컨설팅</h3>
+          <p class="card-price">From $2000</p>
+          <p class="card-description">
+            비즈니스에 AI를 도입하고 싶으신가요? 
+            전문가의 컨설팅으로 최적의 AI 솔루션을 찾아드립니다.
+          </p>
+          <ul class="feature-list">
+            <li>비즈니스 분석</li>
+            <li>AI 전략 수립</li>
+            <li>기술 도입 지원</li>
+            <li>지속적인 관리</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">문의하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features" style="background-color: var(--color-bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">// Features</div>
+        <h2 class="section-title">Why Choose Us</h2>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">확장 가능성</h3>
+          <p class="feature-description">
+            우리의 시스템과 솔루션은 확장 가능하도록 설계되어 
+            비즈니스가 성장함에 따라 함께 성장할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 3v18"/>
+              <path d="M15 3v18"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">미래 지향적 아키텍처</h3>
+          <p class="feature-description">
+            최신 AI 기술과 모범 사례를 사용하여 
+            미래에도 경쟁력 있는 솔루션을 제공합니다.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">포괄적인 기술 스택</h3>
+          <p class="feature-description">
+            다양한 최신 기술과 프레임워크를 활용하여 
+            최고의 성능과 사용자 경험을 제공합니다.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">맞춤형 솔루션</h3>
+          <p class="feature-description">
+            고객의 요구사항에 맞춘 맞춤형 솔루션을 제공하며, 
+            프로젝트 전반에 걸쳐 긴밀히 협력합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="section tech-stack" id="technologies">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">// Technologies</div>
+        <h2 class="section-title">Stack Of Technologies</h2>
+      </div>
+
+      <div class="tech-categories">
+        <button class="tech-category-btn active" data-category="all">All</button>
+        <button class="tech-category-btn" data-category="ai">AI & ML</button>
+        <button class="tech-category-btn" data-category="frontend">Frontend</button>
+        <button class="tech-category-btn" data-category="backend">Backend</button>
+        <button class="tech-category-btn" data-category="mobile">Mobile</button>
+      </div>
+
+      <div class="tech-grid" id="techGrid">
+        <!-- AI & ML -->
+        <div class="tech-card" data-tech="ai">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">TensorFlow</h4>
+          <p class="tech-description">머신러닝 및 딥러닝 프레임워크</p>
+        </div>
+
+        <div class="tech-card" data-tech="ai">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">PyTorch</h4>
+          <p class="tech-description">AI 연구 및 개발 플랫폼</p>
+        </div>
+
+        <div class="tech-card" data-tech="ai">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">OpenAI API</h4>
+          <p class="tech-description">GPT 및 AI 모델 API</p>
+        </div>
+
+        <!-- Frontend -->
+        <div class="tech-card" data-tech="frontend">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 13.5l-6 3v-3l6-3 6 3v3z"/>
+              <path d="M12 10.5l-6-3 6-3 6 3z"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">React</h4>
+          <p class="tech-description">사용자 인터페이스 라이브러리</p>
+        </div>
+
+        <div class="tech-card" data-tech="frontend">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">Vue.js</h4>
+          <p class="tech-description">프로그레시브 JavaScript 프레임워크</p>
+        </div>
+
+        <div class="tech-card" data-tech="frontend">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">TypeScript</h4>
+          <p class="tech-description">타입 안정성을 갖춘 JavaScript</p>
+        </div>
+
+        <!-- Backend -->
+        <div class="tech-card" data-tech="backend">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">Node.js</h4>
+          <p class="tech-description">JavaScript 런타임 환경</p>
+        </div>
+
+        <div class="tech-card" data-tech="backend">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">Python</h4>
+          <p class="tech-description">AI 및 백엔드 개발</p>
+        </div>
+
+        <div class="tech-card" data-tech="backend">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">FastAPI</h4>
+          <p class="tech-description">고성능 API 프레임워크</p>
+        </div>
+
+        <!-- Mobile -->
+        <div class="tech-card" data-tech="mobile">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <rect x="5" y="2" width="14" height="20" rx="2"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">React Native</h4>
+          <p class="tech-description">크로스 플랫폼 모바일 개발</p>
+        </div>
+
+        <div class="tech-card" data-tech="mobile">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">Flutter</h4>
+          <p class="tech-description">아름다운 모바일 앱 개발</p>
+        </div>
+
+        <div class="tech-card" data-tech="mobile">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)">
+              <rect x="5" y="2" width="14" height="20" rx="2"/>
+            </svg>
+          </div>
+          <h4 class="tech-name">Swift</h4>
+          <p class="tech-description">iOS 네이티브 개발</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">// Portfolio</div>
+        <h2 class="section-title">Our Works</h2>
+        <p class="section-description">
+          다양한 프로젝트를 통해 축적된 경험과 노하우를 확인해보세요.
+        </p>
+      </div>
+      
+      <div class="portfolio-filters">
+        <button class="portfolio-filter-btn active" data-filter="all">All</button>
+        <button class="portfolio-filter-btn" data-filter="ai-music">AI Music</button>
+        <button class="portfolio-filter-btn" data-filter="app">Apps</button>
+        <button class="portfolio-filter-btn" data-filter="content">Content</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Portfolio items will be added here -->
+        <a href="app/imposters/index.html" class="portfolio-item" data-category="app">
+          <div class="portfolio-image">
+            <img src="images/imposters/imposter_icon.png" alt="Imposters 앱 아이콘" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Imposters</h3>
+            <p class="portfolio-description">광고 없이 친구들과 즐기는 라이어게임</p>
+            <div class="portfolio-tags">
+              <span class="tag">iOS</span>
+              <span class="tag">게임</span>
+              <span class="tag">파티</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="app/finding_freedom/index.html" class="portfolio-item" data-category="app">
+          <div class="portfolio-image">
+            <img src="images/finding_freedom/finding_freedom_icon.png" alt="자유를 찾아서 앱 아이콘" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">자유를 찾아서</h3>
+            <p class="portfolio-description">당신의 조기 은퇴를 위한 자산 관리 앱</p>
+            <div class="portfolio-tags">
+              <span class="tag">iOS</span>
+              <span class="tag">금융</span>
+              <span class="tag">FIRE</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="portfolio-item" data-category="ai-music">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">AI Music Project</h3>
+            <p class="portfolio-description">AI 기반 음악 제작 프로젝트</p>
+            <div class="portfolio-tags">
+              <span class="tag">AI</span>
+              <span class="tag">Music</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12" y2="18"/>
+              </svg>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Mobile App</h3>
+            <p class="portfolio-description">혁신적인 모바일 애플리케이션</p>
+            <div class="portfolio-tags">
+              <span class="tag">App</span>
+              <span class="tag">Mobile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="content">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">AI Content</h3>
+            <p class="portfolio-description">AI로 생성된 창작 콘텐츠</p>
+            <div class="portfolio-tags">
+              <span class="tag">AI</span>
+              <span class="tag">Content</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="ai-music">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Sound Design</h3>
+            <p class="portfolio-description">전문적인 사운드 디자인</p>
+            <div class="portfolio-tags">
+              <span class="tag">Sound</span>
+              <span class="tag">Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="app">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Web Platform</h3>
+            <p class="portfolio-description">대규모 웹 플랫폼 개발</p>
+            <div class="portfolio-tags">
+              <span class="tag">Web</span>
+              <span class="tag">Platform</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="content">
+          <div class="portfolio-image">
+            <div class="portfolio-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 7l-7 5 7 5V7z"/>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+              </svg>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Video Production</h3>
+            <p class="portfolio-description">AI 기반 영상 제작</p>
+            <div class="portfolio-tags">
+              <span class="tag">Video</span>
+              <span class="tag">AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="section-header">
+          <div class="section-subtitle">// Contact</div>
+          <h2 class="section-title">Let's Work<br>Together</h2>
+          <p class="section-description">
+            당신의 프로젝트에 대해 이야기하고 싶으신가요? 
+            언제든지 연락주세요. 최상의 솔루션을 제공하기 위해 노력하겠습니다.
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-label">Email</div>
+            <a href="mailto:hello@woweverstudio.com" class="contact-item-value">
+              hello@woweverstudio.com
+            </a>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-item-label">Instagram</div>
+            <a href="https://instagram.com/woweverstudio" target="_blank" rel="noopener noreferrer" class="contact-item-value">
+              @woweverstudio
+            </a>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">
+              Seoul, South Korea
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--spacing-3xl);">
+          <a href="mailto:hello@woweverstudio.com" class="btn btn-primary btn-lg">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <a href="#" class="logo" style="margin-bottom: var(--spacing-lg);">
+            <div class="logo-icon">W</div>
+            <span>WowEverStudio</span>
+          </a>
+          <p style="color: var(--color-text-secondary); max-width: 300px;">
+            AI 기술을 활용한 혁신적인 창작 솔루션을 제공하는 스튜디오입니다.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">AI 음악 제작</a></li>
+            <li><a href="#services">앱 개발</a></li>
+            <li><a href="#services">AI 콘텐츠 제작</a></li>
+            <li><a href="#services">AI 컨설팅</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@woweverstudio.com">hello@woweverstudio.com</a></li>
+            <li><a href="https://instagram.com/woweverstudio" target="_blank" rel="noopener noreferrer">@woweverstudio</a></li>
+            <li>Seoul, South Korea</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2025 WowEverStudio. All rights reserved.
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

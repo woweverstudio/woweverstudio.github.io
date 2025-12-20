@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Imposters 앱 개인정보 처리방침 - 어떠한 개인 정보도 수집하지 않습니다.">
+  <title>개인정보 처리방침 - Imposters | WowEverStudio</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  
+  <style>
+    .privacy-page {
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+    
+    .privacy-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--spacing-3xl) var(--spacing-xl);
+    }
+    
+    .privacy-header {
+      text-align: center;
+      margin-bottom: var(--spacing-3xl);
+    }
+    
+    .privacy-title {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-black);
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .privacy-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+    }
+    
+    .privacy-section {
+      margin-bottom: var(--spacing-3xl);
+    }
+    
+    .privacy-section h2 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-lg);
+      margin-top: var(--spacing-2xl);
+    }
+    
+    .privacy-section h2:first-child {
+      margin-top: 0;
+    }
+    
+    .privacy-section p {
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-relaxed);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: var(--spacing-lg) 0;
+    }
+    
+    .privacy-section ul li {
+      padding: var(--spacing-sm) 0;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      line-height: var(--line-height-relaxed);
+    }
+    
+    .privacy-section ul li::before {
+      content: '•';
+      color: var(--color-primary);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-xl);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    
+    .highlight-box {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      margin: var(--spacing-2xl) 0;
+    }
+    
+    .highlight-box p {
+      margin: 0;
+      font-size: var(--font-size-lg);
+      color: var(--color-text-primary);
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-xl);
+      transition: color var(--transition-base);
+    }
+    
+    .back-link:hover {
+      color: var(--color-primary);
+    }
+    
+    .update-date {
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      margin-top: var(--spacing-3xl);
+      padding-top: var(--spacing-xl);
+      border-top: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="../../index.html" class="logo">
+        <div class="logo-icon">W</div>
+        <span>WowEverStudio</span>
+      </a>
+      
+      <nav class="nav" id="nav">
+        <ul class="nav-menu">
+          <li><a href="../../index.html#about" class="nav-link">About Us</a></li>
+          <li><a href="../../index.html#services" class="nav-link">Services</a></li>
+          <li><a href="../../index.html#features" class="nav-link">Features</a></li>
+          <li><a href="../../index.html#technologies" class="nav-link">Technologies</a></li>
+          <li><a href="../../index.html#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="../../index.html#contact" class="btn btn-primary">Get Started</a>
+      </nav>
+      
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Privacy Policy Content -->
+  <section class="privacy-page">
+    <div class="privacy-content">
+      <a href="index.html" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        앱 상세 페이지로 돌아가기
+      </a>
+      
+      <div class="privacy-header">
+        <h1 class="privacy-title">개인정보 처리방침</h1>
+        <p class="privacy-subtitle">Imposters 앱</p>
+      </div>
+      
+      <div class="highlight-box">
+        <p>
+          Imposters 앱은 어떠한 개인 정보도 수집하지 않으며, 
+          어떠한 데이터도 저장하지 않습니다.
+        </p>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>1. 수집하는 정보</h2>
+        <p>
+          Imposters 앱은 사용자의 어떠한 개인 정보도 수집하지 않습니다. 
+          앱은 완전히 오프라인으로 작동하며, 사용자의 데이터를 수집하거나 
+          서버로 전송하지 않습니다.
+        </p>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>2. 데이터 저장</h2>
+        <p>
+          Imposters 앱은 사용자의 어떠한 데이터도 저장하지 않습니다. 
+          앱 내에서 사용자가 추가한 단어나 카테고리는 기기의 로컬 저장소에만 
+          저장되며, 이는 앱 삭제 시 함께 삭제됩니다.
+        </p>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>3. 제3자 서비스</h2>
+        <p>
+          Imposters 앱은 어떠한 제3자 서비스도 사용하지 않습니다. 
+          분석 도구, 광고 네트워크, 또는 기타 데이터 수집 서비스를 
+          사용하지 않습니다.
+        </p>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>4. 보안</h2>
+        <p>
+          Imposters 앱은 개인 정보를 수집하지 않으므로, 
+          개인 정보 보안에 대한 우려가 없습니다. 
+          앱은 완전히 오프라인으로 작동하며, 
+          인터넷 연결이 필요하지 않습니다.
+        </p>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>5. 앱 권한</h2>
+        <p>
+          Imposters 앱은 사용자의 기기에서 어떠한 권한도 요청하지 않습니다. 
+          카메라, 마이크, 위치 정보, 연락처 등 어떠한 권한도 필요하지 않습니다.
+        </p>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>6. 연락처</h2>
+        <p>
+          개인정보 처리방침에 대한 질문이나 문의사항이 있으시면 
+          아래 연락처로 문의해 주세요.
+        </p>
+        <ul>
+          <li>이메일: hello@woweverstudio.com</li>
+          <li>개발자: MINSUNG KIM</li>
+        </ul>
+      </div>
+      
+      <div class="privacy-section">
+        <h2>7. 변경사항</h2>
+        <p>
+          이 개인정보 처리방침은 필요에 따라 업데이트될 수 있습니다. 
+          중요한 변경사항이 있는 경우 앱 내에서 또는 이 페이지를 통해 
+          알려드리겠습니다.
+        </p>
+      </div>
+      
+      <div class="update-date">
+        <p>최종 업데이트: 2025년 1월</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <a href="../../index.html" class="logo" style="margin-bottom: var(--spacing-lg);">
+            <div class="logo-icon">W</div>
+            <span>WowEverStudio</span>
+          </a>
+          <p style="color: var(--color-text-secondary); max-width: 300px;">
+            AI 기술을 활용한 혁신적인 창작 솔루션을 제공하는 스튜디오입니다.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../../index.html#about">About Us</a></li>
+            <li><a href="../../index.html#services">Services</a></li>
+            <li><a href="../../index.html#features">Features</a></li>
+            <li><a href="../../index.html#technologies">Technologies</a></li>
+            <li><a href="../../index.html#portfolio">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="../../index.html#services">AI 음악 제작</a></li>
+            <li><a href="../../index.html#services">앱 개발</a></li>
+            <li><a href="../../index.html#services">AI 콘텐츠 제작</a></li>
+            <li><a href="../../index.html#services">AI 컨설팅</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@woweverstudio.com">hello@woweverstudio.com</a></li>
+            <li><a href="https://instagram.com/woweverstudio" target="_blank" rel="noopener noreferrer">@woweverstudio</a></li>
+            <li>Seoul, South Korea</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2025 WowEverStudio. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../../js/main.js"></script>
+</body>
+</html>
+
