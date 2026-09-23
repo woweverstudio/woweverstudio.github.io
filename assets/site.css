@@ -25,7 +25,7 @@ body {
 a { color: inherit; text-decoration: none; }
 .container { width: min(calc(100% - 2rem), var(--max-width)); margin: 0 auto; }
 .site-header { border-bottom: 1px solid var(--border); }
-.header-inner { min-height: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.header-inner { min-height: 4rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem 0; }
 .wordmark { font-size: 1rem; font-weight: 700; letter-spacing: -0.04em; }
 .nav { display: flex; align-items: center; gap: .25rem; color: var(--muted-foreground); font-size: .875rem; }
 .nav a { padding: .5rem .625rem; border-radius: calc(var(--radius) - .15rem); }
@@ -34,8 +34,8 @@ a { color: inherit; text-decoration: none; }
 .button:hover { opacity: .88; transform: translateY(-1px); }
 .button.secondary { color: var(--foreground); background: transparent; border-color: var(--border); }
 .eyebrow { margin: 0 0 .9rem; color: var(--muted-foreground); font-family: "Geist Mono", monospace; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; }
-.hero { padding: 7.5rem 0 6rem; border-bottom: 1px solid var(--border); }
-.hero h1 { max-width: 56rem; margin: 0; font-size: clamp(3rem, 8vw, 6.5rem); line-height: .98; letter-spacing: -.075em; }
+.hero { padding: 4rem 0 3.5rem; border-bottom: 1px solid var(--border); }
+.hero h1 { max-width: 56rem; margin: 0; font-size: clamp(3rem, 6vw, 4.5rem); line-height: .98; letter-spacing: -.075em; }
 .hero p { max-width: 37rem; margin: 1.5rem 0 0; color: var(--muted-foreground); font-size: 1.125rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2rem; }
 .section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
@@ -46,10 +46,17 @@ a { color: inherit; text-decoration: none; }
 .card-number { color: var(--muted-foreground); font-family: "Geist Mono", monospace; font-size: .75rem; }
 .card h3 { margin: 2.6rem 0 .5rem; font-size: 1rem; letter-spacing: -.025em; }
 .card p { margin: 0; color: var(--muted-foreground); font-size: .9rem; }
+.game-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.game-preview { display: flex; flex-direction: column; min-height: 20rem; padding: 1.75rem; border: 1px solid var(--border); border-radius: var(--radius); }
+.game-preview h3 { margin: 1.5rem 0 .75rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: -.055em; }
+.game-preview h3 span { display: block; margin-top: .5rem; color: var(--muted-foreground); font-size: .875rem; font-weight: 500; letter-spacing: 0; }
+.game-preview > p:not(.eyebrow) { max-width: 28rem; margin: 0; color: var(--muted-foreground); }
+.game-preview .actions { margin-top: auto; padding-top: 2rem; }
 .imposters-hero { padding: 6rem 0; border-bottom: 1px solid var(--border); }
 .imposters-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: end; }
 .imposters-hero h1 { margin: 0; font-size: clamp(3.25rem, 8vw, 6.75rem); line-height: .92; letter-spacing: -.08em; }
 .imposters-hero .lede { max-width: 33rem; margin: 1.5rem 0 0; color: var(--muted-foreground); font-size: 1.1rem; }
+.availability-note { max-width: 33rem; margin: 1rem 0 0; color: var(--muted-foreground); font-size: .875rem; }
 .game-card { padding: 1.35rem; border: 1px solid var(--foreground); border-radius: var(--radius); background: var(--foreground); color: #fff; }
 .game-card .eyebrow { color: #a1a1aa; }
 .game-card p { margin: .6rem 0 0; color: #d4d4d8; font-size: .9rem; }
@@ -74,9 +81,9 @@ a { color: inherit; text-decoration: none; }
 .footer-links a:hover { color: var(--foreground); }
 
 @media (max-width: 700px) {
-  .hero { padding: 5.5rem 0 4rem; }
+  .hero { padding: 3.5rem 0 3rem; }
   .section, .quote { padding: 3.75rem 0; }
-  .grid, .imposters-layout { grid-template-columns: 1fr; }
+  .grid, .game-grid, .imposters-layout { grid-template-columns: 1fr; }
   .imposters-layout { gap: 2rem; }
   .steps li { grid-template-columns: 2.5rem 1fr; }
   .steps li p { grid-column: 2; }
