@@ -70,7 +70,7 @@ a { color: inherit; text-decoration: none; }
 .policy ul { padding-left: 1.2rem; }
 .site-footer { padding: 2rem 0; color: var(--muted-foreground); font-size: .8rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 1rem; }
-.footer-links { display: flex; gap: 1rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
 .footer-links a:hover { color: var(--foreground); }
 
 @media (max-width: 700px) {
