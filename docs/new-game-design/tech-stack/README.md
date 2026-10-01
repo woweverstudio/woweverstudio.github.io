@@ -6,7 +6,7 @@
 
 ## 요약
 
-「도깨비 방범대」는 3명으로 시작해 7명까지 늘어나는 팀이 만드는 2인 협동 디펜스 로그라이트다. 이 문서의 선택은 세 가지 원칙을 따른다. 결정론 코어 하나를 기기와 서버가 함께 쓴다. 서버가 진실의 원천이다. 이 게임만의 차별점만 직접 만들고 나머지는 관리형 서비스를 쓴다(2장).
+「도깨비 방범대」는 3명으로 시작해 7명까지 늘어나는 팀이 만드는 2인 협동 디펜스 로그라이트다. 이 문서의 선택은 네 가지 원칙을 따른다. 결정론 코어 하나를 기기와 서버가 함께 쓴다. 서버가 진실의 원천이다. 이 게임의 차별점만 직접 만들고 나머지는 관리형 서비스를 쓴다. 모든 결정을 측정할 수 있게 한다(2장).
 
 | 영역 | 선택 | 대안 | 고른 이유 |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@
 | 실시간 협동 | Nakama 서버 권위 매치를 입력 릴레이로(서울) | 직접 만든 C# 릴레이, Photon Quantum | 릴레이는 시뮬레이션을 돌릴 필요가 없어 운영할 서비스가 줄어든다(4장) |
 | 게임 서버 | Nakama + Hiro, Heroic Cloud 서울 | Azure PlayFab, Nakama 직접 호스팅 | 리그·방범대·경제·결제 검증이 대부분 기본 기능이고 코어가 오픈소스다(5장) |
 | 서버 작업자 | Cloud Run 서울: .NET 기록 검증·봇 작업자, 스토어 알림 수신기 | — | 결정론 코어를 그대로 싣고, 한가할 때는 비용이 거의 없다(5·7·8장) |
-| 라이브옵스·실험 | Hiro 설정으로 시작해 소프트 런칭부터 Satori | Firebase A/B Testing | 홀드아웃, 묶음 배정, 라이브 이벤트를 한 곳에서 한다(6장) |
+| 라이브옵스·실험 | Hiro 설정으로 시작해 소프트 런칭부터 Satori | Firebase A/B Testing | 홀드아웃과 라이브 이벤트를 한 곳에서 하고, 묶음 배정은 Nakama가 그룹을 만들 때 정한다(6장) |
 | 데이터 | Firebase Analytics, BigQuery 서울, Data Studio, Python | GameAnalytics | 클라이언트 행동과 서버가 확정한 사건을 한 창고에서 합친다(6장) |
 | 결제 | Unity IAP 5.4(StoreKit 2·Play 결제 9.0), Nakama 검증과 서버 장부 | RevenueCat | 유료 재화 없는 직접 판매에서 지출 한도·환불·미성년자 보호를 장부 하나로 처리한다(7장) |
 | 웹 상점 | 글로벌 출시 때 판단(Unity Webshops와 판매대행) | Stash, Xsolla | 지금 이득이 분명한 곳은 미국 iOS뿐이다(7장) |
@@ -25,9 +25,9 @@
 ### 핵심 결정
 
 1. **결정론 코어는 직접 만든다**: 협동, 리그 검증, 리플레이, 봇이 모두 이 코어에 기댄다. 격자 위의 정수 논리라 상용 엔진의 롤백·물리는 필요 없고, 평범한 .NET으로 돌리는 편이 싸고 단순하다. 0단계부터 골든 로그 CI로 지킨다.
-2. **백엔드는 빌린다**: 계정·소셜·리그·경제·결제 검증은 Nakama와 Hiro가 맡고, 직접 만드는 것은 토벌 규칙, 검증 작업자, 지출 한도, 보호 정책으로 좁힌다. Nakama가 오픈소스라 갈아탈 길도 있다.
+2. **백엔드는 빌린다**: 계정·소셜·리그·경제·결제 검증은 Nakama와 Hiro가 맡고, 직접 만드는 것은 토벌 규칙, 협동 릴레이, 검증 작업자, 결제 장부와 지출 한도, 보호 정책, 운영 도구로 좁힌다. Nakama가 오픈소스라 갈아탈 길도 있다.
 3. **결제는 스토어로, 장부는 우리 것으로**: 한국에서는 스토어 결제만 쓰고 웹 상점은 글로벌 출시 때 판단한다. 결제 경로와 무관한 장부 하나가 지출 한도, 환불, 미성년자 보호를 모두 받친다.
-4. **비용은 소프트 런칭에 몰린다**: 월 비용은 0단계 약 10달러, 1단계 약 700달러, 2단계 약 1,900달러로 추정한다(인건비·라이선스 제외). 가장 큰 변수는 Unity Pro(매출·투자 20만 달러 초과 시 7석 기준 월 약 1,350달러)와 Hiro 라이선스 견적이다(10장).
+4. **비용은 소프트 런칭에 몰린다**: 월 비용은 0단계 약 10달러, 1단계 약 700달러, 2단계 약 1,900달러로 추정한다(인건비, 라이선스, 개발·스테이징 서버 환경 제외). 가장 큰 변수는 Unity Pro(매출·투자 20만 달러 초과 시 7석 기준 월 약 1,350달러)와 Hiro 라이선스 견적이다(10장).
 
 ### 지금 할 일
 
@@ -50,7 +50,7 @@
 | 서버 권위 경제: 엽전·조각·레벨, 확률을 공개하는 무료 상자 | 10·14·17장 | 재화와 보상은 서버에서 확정하고 거래 기록을 남긴다. 보상 난수·확률 로그와 변경 이력을 보관한다 |
 | 결제 전용: 패스·구독·직접 판매, 지출 한도, 한 번에 해지 | 14·17장 | 스토어 결제와 영수증 서버 검증, 구독 상태 관리, 월 누적 결제액과 한도 계산 |
 | 설정 기반 라이브옵스: 이벤트·상점·시드·지정 덱을 클라이언트 업데이트 없이 바꾼다 | 15장 | 원격 설정과 이벤트 허브, 스토어 심사 없이 내려받는 콘텐츠 묶음 |
-| 텔레메트리·A/B 실험·홀드아웃·생존 분석 | 16장 | 이벤트 파이프라인과 데이터 웨어하우스. 리그 방·방범대 단위의 묶음 배정을 지원하는 실험 도구 |
+| 텔레메트리·A/B 실험·홀드아웃·생존 분석 | 16장 | 이벤트 파이프라인과 데이터 창고. 리그 방·방범대 단위의 묶음 배정을 지원하는 실험 도구 |
 | 봇 대량 플레이: 밸런스, 운의 폭 측정, 새 시드 사전 검증 | 12·15·16장 | 서버에서 수천\~수만 판을 돌리는 배치 작업과 결과 대시보드 |
 | 한국과 글로벌, 미성년자 보호, 지역 간 동일 운영 | 15·17·18장 | 현지화 파이프라인, 연령 확인·보호자 동의, 지역별 규제 설정 |
 | 저사양 기기와 짧은 세션: 웨이브마다 자동 저장, 앱 전환 후 이어하기 | 9·13장 | 메모리·발열·앱 용량 예산, 버전 호환되는 상태 저장, 빠른 첫 실행 |
@@ -66,18 +66,18 @@
 
 엔진은 **Unity 6.3 LTS**로 한다. 2027년 12월까지 지원되고, 먼저 나온 6.0 LTS는 2026년 10월에 지원이 끝난다([Unity](https://unity.com/releases/unity-6/support)). 고른 이유는 세 가지다.
 
-1. **시뮬레이션 코어를 서버와 공유한다**: Unity 6.3은 C# 9를 .NET Standard 2.1 기준으로 컴파일한다([Unity 문서](https://docs.unity3d.com/6000.3/Documentation/Manual/csharp-compiler.html)). 그래서 순수 C#으로 짠 결정론 코어 하나를 게임 빌드와 화면 없는 .NET 서버(리그 검증, 리플레이, 봇 시뮬레이션)에 함께 쌓 수 있다(4장).
-2. **스토어 연동이 최신이다**: Unity IAP 5.4.3(2026.9.3)은 Google Play 결제 라이브러리 9.0.0과 StoreKit 2를 쓴다([변경 기록](https://docs.unity3d.com/Packages/com.unity.purchasing@5.4/changelog/CHANGELOG.html)). Unity 6은 안드로이드 API 36 타깃팅과 16KB 페이지 요건도 맞춘다.
-3. **한국에서 사람을 뜯을 수 있다**: 사람인 채용 공고는 'Unity' 239건, 'Godot' 1건이었다(2026.10.1 검색, 전 업종). 3명에서 7명으로 늘리는 로드맵에서 채용 속도는 기술 위험만큼 중요하다.
+1. **시뮬레이션 코어를 서버와 공유한다**: Unity 6.3은 C# 9를 .NET Standard 2.1 기준으로 컴파일한다([Unity 문서](https://docs.unity3d.com/6000.3/Documentation/Manual/csharp-compiler.html)). 그래서 순수 C#으로 짠 결정론 코어 하나를 게임 빌드와 화면 없는 .NET 서버(리그 검증, 리플레이, 봇 시뮬레이션)에 함께 실을 수 있다(4장).
+2. **스토어 연동이 최신이다**: Unity IAP 5.4.3(2026.9.3)은 Google Play 결제 라이브러리 9.0.0과 StoreKit 2를 쓴다([변경 기록](https://docs.unity3d.com/Packages/com.unity.purchasing@5.4/changelog/CHANGELOG.html)). Unity 6.3은 안드로이드 API 36을 타깃할 수 있고([Unity 문서](https://docs.unity3d.com/6000.3/Documentation/Manual/android-requirements-and-compatibility.html)), 16KB 페이지 요건도 맞춘다([Android](https://developer.android.com/games/engines/unity/unity-on-android)).
+3. **한국에서 사람을 뽑을 수 있다**: 사람인 채용 공고는 'Unity' 239건, 'Godot' 1건이었다(2026.10.1 검색, 전 업종, [사람인](https://www.saramin.co.kr/zf_user/search/recruit?searchword=Unity)). 3명에서 7명으로 늘리는 로드맵에서 채용 속도는 기술 위험만큼 중요하다.
 
-**비용**: 최근 12개월 매출과 투자금이 20만 달러 미만이면 Personal로 무료고, 그 이상이면 Pro가 필요하다. Pro는 2026년 1월 12일부터 5% 오른 좌석당 연 2,310달러(월 210달러)다. 런타임 요금은 2024년 9월 취소됐다([Unity](https://unity.com/products/pricing-updates)). 투자를 20만 달러 넘게 받거나 소프트 런칭에서 매출이 나면, 7석 기준 연 약 1만 6천 달러를 예산에 넣는다(10장).
+**비용**: 최근 12개월 매출과 투자금이 20만 달러 미만이면 Personal로 무료이고, 그 이상이면 Pro가 필요하다. Pro는 2026년 1월 12일부터 5% 오른 좌석당 연 2,310달러(월 결제는 월 210달러)다. 런타임 요금은 2024년 9월 취소됐다([Unity](https://unity.com/products/pricing-updates)). 최근 12개월 매출과 투자금의 합이 20만 달러를 넘으면 그때 인원만큼 Pro 좌석을 예산에 넣는다(7석이면 연 약 1만 6천 달러, 10장).
 
 ### 엔진 비교
 
 | 엔진 | 강점 | 이 게임에서의 약점 | 판단 |
 | --- | --- | --- | --- |
 | Unity 6.3 LTS | C# 코어 공유, 결제·분석·어트리뷰션 SDK 생태계, 채용 시장 | 매출·투자 20만 달러를 넘으면 좌석당 연간 요금 | 선택 |
-| Godot 4.7 | 무료(MIT), 가벼움. Godot 재단이 Play 결제·StoreKit 2 플러그인을 관리한다([Godot](https://godotengine.org/article/godot-mobile-update-apr-2026/)) | 안드로이드·iOS의 C# 지원이 아직 '실험적'이고([Godot 문서](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/index.html)), StoreKit 2 플러그인은 API가 안정되지 않았다고 밝힌다 | C# 코어를 공유하는 라이브 서비스에는 위험 |
+| Godot 4.7 | 무료(MIT), 가벼움. Godot 재단이 Play 결제·StoreKit 2 플러그인을 관리한다([Godot](https://godotengine.org/article/godot-mobile-update-apr-2026/)) | 안드로이드·iOS의 C# 지원이 아직 '실험적'이고([Godot 문서](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/index.html)), StoreKit 2 플러그인은 API가 안정되지 않았다고 밝힌다([GitHub](https://github.com/godot-sdk-integrations/godot-storekit2)) | C# 코어를 공유하는 라이브 서비스에는 위험 |
 | Cocos Creator 3.8 | 2D 모바일에 강하고, Cocos 4는 2026년 MIT로 공개됐다([PR Newswire](https://www.prnewswire.com/news-releases/cocos-4-is-here-fully-open-source-302652264.html)) | JS/TS 중심이라 C# 코어를 서버와 공유할 수 없다 | 제외 |
 | Defold 1.13 | 무료·로열티 없음, 작은 빌드([Defold](https://defold.com/2026/09/29/Defold-1-13-2/)) | Lua 스크립트, 작은 생태계 | 제외 |
 
@@ -86,7 +86,7 @@
 - **렌더링**: 스프라이트 기반 2D에 ASTC로 압축한 아틀라스를 쓴다. 모든 연출은 풀링하고, 30fps 설정을 둔다.
 - **UI**: uGUI로 시작한다. Unity 6.3 문서는 런타임 UI에 uGUI를 권장하고 UI Toolkit을 대안으로 둔다([Unity 문서](https://docs.unity3d.com/6000.3/Documentation/Manual/UI-system-compare.html)). 도감·상점처럼 데이터가 많은 메뉴만 나중에 UI Toolkit을 검토한다.
 - **애니메이션**: 무료인 Unity 2D Animation을 기본으로 한다. Spine은 아트 방향이 요구할 때만 쓴다. 사용자당 Professional 379달러이고, 투자를 포함한 매출이 50만 달러를 넘으면 Enterprise(연 2,499달러 + 사용자당 379달러)가 필요하다([Spine](https://esotericsoftware.com/spine-purchase)).
-- **에셋 배포**: Addressables로 시즌 콘텐츠를 내려받는다. Google Play는 기본 모듈을 500MB까지 허용하지만 200MB를 넘으면 모바일 데이터 경고를 띄운다([Google Play](https://support.google.com/googleplay/android-developer/answer/9859372)). Apple은 iOS 27부터 On-Demand Resources를 중단 예정으로 바꾸고 Background Assets를 권한다([Apple](https://developer.apple.com/help/app-store-connect/reference/on-demand-resources-size-limits/)). 첫 설치는 150MB 이하를 목표로 한다.
+- **에셋 배포**: Addressables로 시즌 콘텐츠를 내려받는다. Google Play는 기본 모듈을 500MB까지 허용하지만 200MB를 넘으면 모바일 데이터 경고를 띄운다([Google Play](https://support.google.com/googleplay/android-developer/answer/9859372)). Apple은 iOS 27부터 On-Demand Resources를 지원 중단 예정으로 지정하고 Background Assets를 권한다([Apple](https://developer.apple.com/help/app-store-connect/reference/on-demand-resources-size-limits/)). 첫 설치는 150MB 이하를 목표로 한다.
 - **합체 하이라이트 영상**: 기기에서 리플레이를 다시 그려 짧은 영상으로 인코딩한다. 입력 로그만 있으면 되므로 서버에 영상을 올리지 않는다.
 
 ### 저사양 기기 예산
@@ -103,7 +103,7 @@
 
 ## 결정론 시뮬레이션과 실시간 협동
 
-시뮬레이션은 **직접 만든 순수 C# 코어**로, 통신은 **서울 리전의 Nakama 매치 릴레이**로 한다. 이 게임은 격자 위의 정수 논리이고 입력이 드물다(판당 수백 개). 상용 결정론 엔진이 주는 물리·내비게이션·롤백은 대부분 쓸 일이 없다. 반면 리그 검증·리플레이·봇 시뮬레이션은 코어를 평범한 .NET 라이브러리로 돌릴 때 가장 싸고 단순하다. 릴레이는 시뮬레이션을 돌리지 않고 입력에 틱 번호를 붙여 나눠 주기만 하므로, 백엔드(5장)인 Nakama의 서버 권위 매치로 충분하다. 릴레이 서버를 따로 두지 않으니 운영할 서비스가 하나 줄어든다.
+시뮬레이션은 **직접 만든 순수 C# 코어**로, 통신은 **서울 리전의 Nakama 서버 권위 매치**로 한다. 이 게임은 격자 위의 정수 논리이고 입력이 드물다(판당 수백 개, 설계 가정). 상용 결정론 엔진이 주는 물리·내비게이션·롤백은 대부분 쓸 일이 없다. 반면 리그 검증·리플레이·봇 시뮬레이션은 코어를 평범한 .NET 라이브러리로 돌릴 때 가장 싸고 단순하다. 릴레이는 시뮬레이션을 돌리지 않고 입력에 틱 번호를 붙여 나눠 주기만 하므로, 백엔드(5장)인 Nakama의 서버 권위 매치로 충분하다. 릴레이 서버를 따로 두지 않으니 운영할 서비스가 하나 줄어든다.
 
 ![하나의 코어가 두 기기와 서버에서 같은 판을 만든다](images/coop-architecture.png)
 
@@ -113,39 +113,39 @@
 
 - **고정 소수점**: 64비트 정수 기반 Q32.32 산술을 쓴다. MIT 라이선스인 [FixedMathSharp](https://github.com/mrdav30/FixedMathSharp)(7.1.0, 2026년 8월, netstandard2.1·net8.0 지원)나 C#·Java·C++에서 비트 단위로 같은 결과를 내는 [FixPointCS](https://github.com/XMunkki/FixPointCS)를 후보로 둔다. 2021년에 보관 처리된 [FixedMath.Net](https://github.com/asik/FixedMath.Net)은 쓰지 않는다.
 - **부동소수점을 쓰지 않는다**: .NET의 Math.Sin 같은 함수는 운영체제·CPU에 따라 결과가 다를 수 있다고 문서에 적혀 있다([Microsoft](https://learn.microsoft.com/en-us/dotnet/api/system.math.sin)). Burst의 결정론 모드는 Burst로 컴파일한 코드에만 적용돼 .NET 서버에는 도움이 되지 않는다([Unity 문서](https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/compilation-burstcompile.html)). 체력·사거리 같은 콘텐츠 수치는 빌드 때 정수로 굽는다. Photon 문서도 시뮬레이션 안에서 부동소수점을 고정 소수점으로 바꾸면 반드시 어긋난다고 경고한다([Photon](https://doc.photonengine.com/quantum/v3/manual/quantum-ecs/fixed-point)).
-- **순서가 정해지지 않은 것을 쓰지 않는다**: Array.Sort는 불안정 정렬이고, Dictionary의 순회 순서는 정해져 있지 않으며, string.GetHashCode는 구현마다 다를 수 있다(Microsoft 문서). 안정 정렬과 동점 규칙, 순서가 있는 컨테이너, 자체 해시 함수를 쓴다.
+- **순서가 정해지지 않은 것을 쓰지 않는다**: Array.Sort는 불안정 정렬이고, Dictionary의 순회 순서는 정해져 있지 않으며, string.GetHashCode는 구현마다 다를 수 있다([Microsoft](https://learn.microsoft.com/en-us/dotnet/api/system.string.gethashcode)). 안정 정렬과 동점 규칙, 순서가 있는 컨테이너, 자체 해시 함수를 쓴다.
 - **엔진과 분리한다**: 코어 어셈블리가 UnityEngine을 참조하지 못하게 막는다(noEngineReferences). 화면은 코어의 상태를 읽어 그릴 뿐이다.
 - **고정 틱**: 초당 20틱으로 돌리고 입력은 2\~3틱 뒤에 적용한다(100\~150밀리초). 디펜스 게임에서는 느껴지지 않는 지연이라고 보고, 프로토타입에서 확인한다(설계 가정).
-- **기기 간 결과를 매일 비교한다**: 골든 입력 로그를 ARM64 폰과 x86-64 서버에서 돌려 틱별 체크섬을 비교하고, 다르면 빌드를 막는다(8장).
+- **기기 간 결과를 계속 비교한다**: 골든 입력 로그의 틱별 체크섬을 병합마다 x86-64 서버에서, 매일 밤 안드로이드·iOS 실기기에서 비교하고, 다르면 병합이나 출시 빌드를 막는다(8장).
 
 ### 협동 판의 흐름
 
-1. **매칭**: 깊은 밤 단계가 비슷한 두 사람을 묶고, 10초 안에 못 찾으면 봇 파트너로 시작한다(기획서 11장).
+1. **매칭**: 깊은 밤 단계가 비슷한 두 사람을 묶고, 10초 안에 못 찾으면 봇 파트너로 시작한다(기획서 11장). 기획서의 고스트 봇은 지난 판 입력을 그대로 재생하지 않는다. 협동 판에서는 상대 행동에 따라 같은 입력이 무효가 되므로, 플레이어 기록에서 뽑은 성향(배치·합체 선호, 반응 속도)을 따르는 규칙 기반 결정론 봇으로 만든다(설계 가정).
 2. **진행**: 각 기기는 입력(소환·합체·배치·기운 보내기)만 릴레이로 보낸다. 릴레이는 입력에 실행할 틱 번호를 붙여 두 기기에 똑같이 보내고, 두 기기는 같은 입력으로 각자 시뮬레이션한다.
-3. **어긋남 감지**: 기기는 몇 틱마다 상태 해시를 보내고 릴레이가 비교한다. 다르면 그 판을 거기서 끝내 막은 웨이브만큼 보상하고, 입력 로그로 원인을 찾는다. 이 비율은 출시 품질 지표다(기획서 18장 관문 2의 '협동 판 비정상 종료 2% 미만').
-4. **끊김과 재접속**: 30초 안에 돌아오면 릴레이가 가진 입력 로그로 판을 처음부터 빠르게 다시 돌려 따라잡는다. 그 뒤에는 릴레이가 'T틱부터 N번 자리를 봇이 맡는다'는 입력을 보내고, 결정론 봇이 모든 기기에서 똑같이 그 자리를 이어받는다.
-5. **판이 끝나면**: 릴레이가 입력 로그와 결과를 백엔드로 넘기고, 보상은 서버가 확정한다. 혼자 하는 리그 기록 판은 기기가 입력 로그를 올리면 기록 검증 작업자가 다시 돌려 점수를 확정한다.
+3. **어긋남 감지**: 기기는 몇 틱마다 상태 해시를 보내고 릴레이가 비교한다. 다르면 그 판을 거기서 끝내고 막은 웨이브만큼 보상하며, 입력 로그로 원인을 찾는다. 이렇게 끝난 판의 비율은 1단계 관문 지표다(기획서 18장 관문 2의 '협동 판 비정상 종료 2% 미만').
+4. **끊김과 재접속**: 30초 안에 돌아오면 릴레이가 가진 입력 로그로 판을 처음부터 빠르게 다시 돌려 따라잡는다. 30초 안에 돌아오지 못하면 릴레이가 'T틱부터 N번 자리를 봇이 맡는다'는 입력을 보내고, 결정론 봇이 모든 기기에서 똑같이 그 자리를 이어받는다.
+5. **판이 끝나면**: 릴레이가 입력 로그를 백엔드로 넘기면 기록 검증 작업자가 판을 다시 돌려 결과를 정하고, 보상은 그 결과로 서버가 확정한다. 대요괴 토벌 판도 같은 방식으로 피해를 확정한다. 혼자 하는 리그 기록 판은 기기가 입력 로그를 올리면 기록 검증 작업자가 다시 돌려 점수를 확정한다.
 
 ### 직접 구현과 상용 엔진 비교
 
 | 선택지 | 무엇을 주나 | 비용 | 판단 |
 | --- | --- | --- | --- |
-| 직접 만든 C# 코어 + Nakama 매치 릴레이 | 코어는 서버에서 평범한 .NET으로 돌고, 릴레이는 Nakama 서버 권위 매치가 틱마다 입력을 묶어 보낸다. Nakama 매치는 Go·Lua·TypeScript로만 쓸 수 있어 C# 코어를 실시간으로 돌리지는 못하지만([Heroic Labs](https://heroiclabs.com/docs/nakama/concepts/multiplayer/authoritative/)), 이 설계에서는 릴레이가 코어를 돌릴 필요가 없다 | 릴레이는 백엔드 비용에 포함되고(5장), 검증 작업자는 컴퓨팅 비용만 든다 | 선택 |
-| 직접 만든 C# 릴레이 | 서버가 코어를 실시간 심판처럼 돌릴 수 있다 | 서버 비용과 운영할 서비스가 하나 늘어난다. 구글 클라우드는 서울 리전(asia-northeast3)을 운영한다([Google Cloud](https://cloud.google.com/compute/docs/regions-zones)) | 대안. 4인 토벌전에서 서버가 실시간으로 판정해야 하거나 지역별 릴레이가 필요할 때 |
-| Photon Quantum 3 | 결정론 ECS, 예측·롤백, 최대 128명, 리플레이 웹훅, 대체 봇 패턴, 서울 리전([Photon](https://doc.photonengine.com/quantum/v3/quantum-intro)) | 개발 20 CCU·출시 100 CCU 무료, 500 CCU 월 125달러, 1,000 CCU 월 250달러([Photon](https://www.photonengine.com/quantum/pricing)). 서버에서 시뮬레이션을 돌리려면 추가 비용이 드는 Enterprise Cloud가 필요하다([Photon](https://doc.photonengine.com/quantum/v3/manual/cheat-protection)) | 대비책. 4인 토벌전이 액션 위주가 되면 다시 검토한다 |
-| Photon Realtime | 범용 방 단위 릴레이, 서울 리전 | 500 CCU 월 95달러부터([Photon](https://www.photonengine.com/realtime/pricing)). 서버 로직은 별도 플러그인 계약이 필요하다 | 전송만 맡길 때의 대안 |
+| 직접 만든 C# 코어 + Nakama 서버 권위 매치(입력 릴레이) | 코어는 서버에서 평범한 .NET으로 돌고, 릴레이는 Nakama 서버 권위 매치가 틱마다 입력을 묶어 보낸다. Nakama 매치는 Go·Lua·TypeScript로만 쓸 수 있어 C# 코어를 실시간으로 돌리지는 못하지만([Heroic Labs](https://heroiclabs.com/docs/nakama/concepts/multiplayer/authoritative/)), 이 설계에서는 릴레이가 코어를 돌릴 필요가 없다 | 릴레이는 백엔드 비용에 포함되고(5장), 검증 작업자는 컴퓨팅 비용만 든다 | 선택 |
+| 직접 만든 C# 릴레이 | 서버가 코어를 실시간 심판처럼 돌릴 수 있다 | 서버 비용과 운영할 서비스가 하나 늘어난다. 구글 클라우드는 서울 리전(asia-northeast3)을 운영한다([Google Cloud](https://cloud.google.com/compute/docs/regions-zones)) | 대안. 출시 뒤 4인 실시간 토벌전에서 서버가 실시간으로 판정해야 하거나 지역별 릴레이가 필요할 때 |
+| Photon Quantum 3 | 결정론 ECS, 예측·롤백, 최대 128명, 리플레이 웹훅, 대체 봇 패턴, 서울 리전([Photon](https://doc.photonengine.com/quantum/v3/quantum-intro)) | 개발 20 CCU·출시 100 CCU 무료, 500 CCU 월 125달러, 1,000 CCU 월 250달러([Photon](https://www.photonengine.com/quantum/pricing)). 서버에서 시뮬레이션을 돌리려면 추가 비용이 드는 Enterprise Cloud가 필요하다([Photon](https://doc.photonengine.com/quantum/v3/manual/cheat-protection)) | 대비책. 출시 뒤 4인 실시간 토벌전이 액션 위주가 되면 다시 검토한다 |
+| Photon Realtime | 범용 방 단위 릴레이, 서울 리전 | 500 CCU 월 95달러부터([Photon](https://www.photonengine.com/realtime/pricing)). 서버 로직은 별도 플러그인 계약이 필요하다([Photon](https://www.photonengine.com/gaming)) | 전송만 맡길 때의 대안 |
 | Unity Relay | 전용 서버 없이 기기를 잇는다 | 평균 50 CCU까지 무료, 이후 CCU당 0.16달러([Unity](https://unity.com/products/gaming-services/pricing)) | 서울 리전이 없고 가장 가까운 곳이 도쿄다([Unity 문서](https://docs.unity.com/en-us/relay/locations-and-regions)). 제외 |
 
-CCU는 동시 접속자 수다. 릴레이는 처음엔 서울 한 곳에 둔다. 글로벌 출시 뒤 먼 지역의 협동 지연이 문제로 측정되면 지역별 릴레이(직접 만든 C# 릴레이나 Photon)를 더한다. 수직 슬라이스가 끝나는 24주차에 4인 토벌전의 성격을 보고 Quantum 전환 여부를 다시 판단한다.
+CCU는 동시 접속자 수다. 릴레이는 처음엔 서울 한 곳에 둔다. 글로벌 출시 뒤 먼 지역의 협동 지연이 문제로 측정되면 지역별 릴레이(직접 만든 C# 릴레이나 Photon)를 더한다. 수직 슬라이스가 끝나는 24주차에는 2인 협동의 어긋남·재접속 지표로 이 구조를 확정하고, Quantum 전환 여부는 출시 뒤 첫 대형 업데이트 후보인 4인 실시간 토벌전(기획서 15·18장)을 설계할 때 다시 판단한다.
 
 ## 게임 서버와 백엔드
 
 백엔드는 **Nakama + Hiro를 Heroic Cloud 서울 리전**에서 쓴다. 소프트 런칭부터는 같은 회사의 Satori를 더해 라이브옵스와 실험을 맡긴다(6장). 고른 이유는 네 가지다.
 
-1. **요구사항 대부분이 기본 기능이다**: Nakama는 기기·애플·구글 로그인, 친구, 그룹과 채팅, 리더보드·토너먼트, 매치메이커, 실시간 매치를 기본으로 주고([GitHub](https://github.com/heroiclabs/nakama)), 결제·구독 영수증 검증과 스토어 서버 알림도 처리한다([Heroic Labs](https://heroiclabs.com/docs/nakama/concepts/iap-validation/)). Hiro는 지갑·인벤토리·상점·가중치 보상·업적·우편함·팀(채팅 포함)을 주고, 그룹 크기·티어·승급과 강등 구간을 설정하는 이벤트 리더보드를 준다([Heroic Labs](https://heroiclabs.com/docs/hiro/concepts/event-leaderboards/)). 기획서의 30명 그룹·10티어 주간 리그가 설정만으로 만들어진다.
+1. **요구사항 대부분이 기본 기능이다**: Nakama는 기기·애플·구글 로그인, 친구, 그룹과 채팅, 리더보드·토너먼트, 매치메이커, 실시간 매치를 기본으로 주고([GitHub](https://github.com/heroiclabs/nakama)), 결제·구독 영수증 검증과 스토어 서버 알림도 처리한다([Heroic Labs](https://heroiclabs.com/docs/nakama/concepts/iap-validation/)). Hiro는 지갑·인벤토리·상점·가중치 보상·업적·우편함·팀(채팅 포함)을 주고, 그룹 크기·티어·승급과 강등 구간을 설정하는 이벤트 리더보드를 준다([Heroic Labs](https://heroiclabs.com/docs/hiro/concepts/event-leaderboards/)). 기획서의 30명 그룹·10티어 승급과 강등은 설정으로 만들고, 고스트로 빈자리 채우기·가입일 기준 신규 리그·기록 검증은 직접 붙인다.
 2. **종속이 적다**: Nakama 서버는 Apache-2.0 오픈소스라 관리형에서 직접 호스팅으로 옮길 수 있다. Hiro와 Satori는 상용이다([Heroic Labs](https://heroiclabs.com/hiro/)).
 3. **서울에서 돈다**: Heroic Cloud는 구글 클라우드 서울 리전(asia-northeast3)에 배포할 수 있다([Heroic Labs](https://heroiclabs.com/docs/heroic-cloud/concepts/titles/nakama-deployments/index.html)).
-4. **비용을 예측할 수 있다**: 요금 계산기 기준으로 Nakama CPU당 월 400달러에 DB CPU당 월 200달러이고, 이용자·동시 접속자 한도가 없다. 고가용성 구성은 Nakama CPU 2개부터라 월 약 1,000달러, 단일 노드는 월 600달러다([Heroic Labs](https://heroiclabs.com/pricing/)). Hiro는 개발자당 연간 라이선스인데 가격이 공개돼 있지 않아 견적을 받아야 한다.
+4. **비용을 예측할 수 있다**: 요금 계산기 기준으로 Nakama CPU당 월 400달러에 DB CPU당 월 200달러이고, 이용자·동시 접속자 한도가 없다. 고가용성 구성은 Nakama CPU 2개부터라 월 약 1,000달러, 단일 노드는 월 600달러다([Heroic Labs](https://heroiclabs.com/pricing/)). Hiro는 상용 라이선스이고, 가격과 과금 방식이 공개돼 있지 않아 견적을 받아야 한다.
 
 서버 확장 코드는 Nakama가 지원하는 Go나 TypeScript로 쓴다. 클라이언트와 언어가 다르다는 것이 이 선택의 비용이다. 다만 결정론 코어가 필요한 일(기록 검증·봇 시뮬레이션)은 모두 .NET 작업자가 맡으므로, Nakama 쪽 코드는 규칙과 데이터 처리에 머문다.
 
@@ -155,7 +155,7 @@ CCU는 동시 접속자 수다. 릴레이는 처음엔 서울 한 곳에 둔다.
 | --- | --- | --- | --- |
 | Nakama + Hiro (Heroic Cloud) | 리그·방범대·경제·결제 검증까지 대부분 기본 기능이다 | Go·Lua·TypeScript | 선택 |
 | Azure PlayFab | 경제·리더보드·친구는 있지만 Economy v2에 드롭 테이블이 없다. 사용량 과금이고 인벤토리 쓰기는 100만 건당 40달러다([Microsoft](https://developer.microsoft.com/en-us/games/products/playfab/pricing)). 무료인 Foundation 모드는 Xbox 출시가 조건이다([Microsoft](https://learn.microsoft.com/en-us/gaming/playfab/get-started/foundation-onboarding)) | Azure Functions(C# 가능) | 차선 |
-| Unity Gaming Services | Cloud Code를 C#으로 쓸 수 있다. 하지만 Economy는 2026년 9월 8일부터 새 프로젝트를 받지 않고([Unity](https://docs.unity.com/en-us/economy)), 자체 서버 호스팅 Multiplay는 2026년 4월 1일 종료됐다([Unity](https://status.unity.com/info_notices/362941)). 무료 한도를 넘으면 결제 수단을 등록할 때까지 UGS 전체가 멈춘다([Unity](https://docs.unity.com/en-us/services/pricing-and-billing)) | C#·JavaScript | 제외 |
+| Unity Gaming Services | Cloud Code를 C#으로 쓸 수 있다. 하지만 Economy는 2026년 9월 8일부터 새 프로젝트를 받지 않고([Unity](https://docs.unity.com/en-us/economy)), Unity의 게임 서버 호스팅 서비스 Multiplay는 2026년 4월 1일 종료됐다([Unity](https://status.unity.com/info_notices/362941)). 무료 한도를 넘으면 결제 수단을 등록할 때까지 UGS 전체가 멈춘다([Unity](https://docs.unity.com/en-us/services/pricing-and-billing)) | C#·JavaScript | 제외 |
 | Firebase | 인증·원격 설정·분석·푸시는 좋지만 매칭·길드·리그가 없다. Remote Config는 2026년 9월 1일부터 하루 10만 회를 넘는 조회가 유료다([Firebase](https://firebase.google.com/pricing)) | Cloud Functions | 백엔드로는 제외. 분석·크래시·푸시 SDK만 쓴다(6·8장) |
 | NHN Cloud Gamebase | 네이버·페이코 로그인, 카카오게임 어댑터, 원스토어·갤럭시 스토어 결제, 점검·공지·쿠폰([NHN Cloud](https://docs.nhncloud.com/ko/Game/Gamebase/ko/Overview/)) | 해당 없음 | 현재 가격을 확인하지 못했다. 국내 대체 스토어로 넓힐 때 검토 |
 | 자체 구축(Go·.NET + PostgreSQL) | 인증, 영수증, 장부, 채팅, 매칭, 설정, 운영 도구를 모두 직접 만든다 | 자유 | 제외. 서버 개발자가 여럿이어야 현실적이다 |
@@ -181,7 +181,7 @@ CCU는 동시 접속자 수다. 릴레이는 처음엔 서울 한 곳에 둔다.
 - **기록 검증 작업자**: 결정론 코어를 담은 .NET 컨테이너를 Cloud Run 서울 리전에서 작업 큐로 돌린다([Google Cloud](https://cloud.google.com/run/docs/locations)). 봇 농장도 같은 이미지를 쓴다.
 - **토벌 규칙·협동 릴레이·카카오 인증 훅·지출 한도**: Nakama 서버 확장 코드로 만든다.
 - **확률표와 감사 로그**: 한국은 2024년 3월 22일부터 확률형 아이템 확률 공개를 의무화했다([대한민국 정책브리핑](https://www.korea.kr/news/policyNewsView.do?newsId=148924297)). 유료 확률형은 없지만 무료 상자에도 같은 형식을 적용한다(기획서 17장).
-- **서버 이벤트 기록기와 운영 도구**: 경제·결제·리그 이벤트를 데이터 웨어하우스로 보내는 기록기(6장)와 고객 지원·보상 지급 도구(8장).
+- **서버 이벤트 기록기와 운영 도구**: 경제·결제·리그 이벤트를 데이터 창고로 보내는 기록기(6장)와 고객 지원·보상 지급 도구(8장).
 
 예산이 더 빠듯하면 Nakama 오픈소스를 구글 클라우드 서울에 직접 올리는 방법이 있다. 단, 여러 노드를 묶는 클러스터링은 Enterprise 기능이라 단일 노드로만 돌릴 수 있다([Heroic Labs](https://heroiclabs.com/enterprise/)). 프로토타입에는 충분하고, 출시에는 관리형을 쓴다.
 
@@ -230,7 +230,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 | 상품(기획서 14장) | 스토어 상품 유형 | 서버 처리 |
 | --- | --- | --- |
 | 스타터 팩, 코스메틱, 새 도깨비 | 비소모성 | 계정 소유로 기록한다 |
-| 시즌 패스(프리미엄·프리미엄+) | 소모성 | 시즌마다 다시 사므로 소모성으로 두고, 시즌당 한 번만 팔도록 서버가 막는다 |
+| 시즌 패스(프리미엄·프리미엄+) | 소모성 | 패스(4주)마다 다시 사므로 소모성으로 두고, 패스 기간마다 한 번만 팔도록 서버가 막는다(시즌마다 패스는 두 번 열린다, 기획서 9·15장) |
 | 성장 묶음 | 소모성 | 결과물(예: 레벨 10 달성)을 지급하고, 이미 달성한 계정에는 제안하지 않는다 |
 | 방범대 선물 팩 | 소모성 | 구매자와 방범대원 전원의 우편함으로 같은 코스메틱을 보낸다 |
 | 월간 멤버십 | 자동 갱신 구독 | 스토어 알림으로 상태를 갱신하고 혜택을 켜고 끈다 |
@@ -241,7 +241,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 2. **지급 뒤 확정**: 서버는 거래 ID를 키로 장부에 한 줄을 쓰고, 상품을 지급한 다음에 구매를 확정한다(Apple은 거래 완료, Google은 확인·소비). 같은 거래가 두 번 와도 한 번만 지급된다. Google은 3일 안에 확인하지 않은 구매를 자동 환불하므로([Google Play](https://developer.android.com/google/play/billing/integrate)), 지급에 실패한 거래는 재시도 큐에 넣고 경보를 띄운다.
 3. **스토어 알림**: Nakama는 Apple App Store 서버 알림 V2와 Google 실시간 개발자 알림(RTDN)을 받아 구독·갱신·만료·해지·환불 다섯 가지로 정리하고, DB를 고친 뒤 우리 훅을 부른다(같은 문서). 훅은 장부와 혜택을 맞춘다.
 4. **환불**: 되돌릴 수 있는 것(외형, 도깨비 소유권, 아직 받지 않은 패스 보상, 멤버십 혜택)만 회수하고, 이미 반영된 성장은 장부에 기록만 남긴다. 결제에 이의를 제기한 계정은 잠그지 않는다(기획서 14·17장).
-5. **환불 심사에 답한다**: Apple은 모든 상품 유형의 환불 요청에 CONSUMPTION\_REQUEST를 보내고, 고객이 동의한 경우에만 12시간 안에 사용 정보를 받는다([Apple](https://developer.apple.com/documentation/appstoreserverapi/send-consumption-information)). Google은 개발자 검토가 필요한 차지백에 PendingRefundReviewNotification을 보내고, 24시간 안에 ReviewRefund API로 의견을 받는다([Google Play](https://developer.android.com/google/play/billing/rtdn-reference)). 둘 다 Nakama가 정리하는 다섯 가지에 없다. 그래서 Apple 알림을 먼저 받아 Nakama로 넘기는 작은 수신기를 Cloud Run에 두고, Google 알림은 Pub/Sub 구독을 하나 더 만들어 받는다. 수신기는 Apple의 공식 App Store Server Library가 있는 Node(TypeScript)로 쓴다([Apple](https://developer.apple.com/documentation/appstoreserverapi/simplifying-your-implementation-by-using-the-app-store-server-library)). 동의는 설정 화면에서 따로 받는다(옵트인).
+5. **환불 심사에 답한다**: Apple은 모든 상품 유형의 환불 요청에 CONSUMPTION\_REQUEST를 보내고, 고객이 동의한 경우에만 12시간 안에 사용 정보를 받는다([Apple](https://developer.apple.com/documentation/appstoreserverapi/send-consumption-information)). Google은 개발자 검토가 필요한 차지백에 PendingRefundReviewNotification을 보내고, 24시간 안에 ReviewRefund API로 의견을 받는다([Google Play](https://developer.android.com/google/play/billing/rtdn-reference)). 둘 다 Nakama가 정리하는 다섯 가지에 없다. 그래서 Apple 알림을 먼저 받아 Nakama로 넘기는 작은 수신기를 Cloud Run에 두고, Google 알림은 Pub/Sub 구독을 하나 더 만들어 받는다. 수신기는 Apple의 공식 App Store Server Library가 있는 Node(TypeScript)로 쓴다([Apple](https://developer.apple.com/documentation/appstoreserverapi/simplifying-your-implementation-by-using-the-app-store-server-library)). Apple에 사용 정보를 보내는 데 필요한 고객 동의는 설정 화면에서 따로 받는다(옵트인).
 6. **지출 한도는 결제창 앞에서**: 구매 버튼을 누르면 서버가 월 누적 결제액(환불을 뺀 장부 합계), 플레이어가 정한 월 한도, 연령 상태(9장)를 확인하고, 넘으면 스토어 결제창을 띄우지 않는다. 같은 장부를 읽으므로 웹 상점이 붙어도 그대로 쓴다.
 
 ### 구독: 월간 멤버십
@@ -269,18 +269,18 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 
 웹 상점의 이득이 분명한 곳은 지금 미국 iOS뿐이다.
 
-- **Apple(미국)**: 미국 스토어프런트 앱은 별도 권한 없이 외부 결제 링크를 넣을 수 있고([Apple 심사 지침](https://developer.apple.com/app-store/review/guidelines/)), 지금은 그 결제에 수수료가 없다. 다만 Apple은 2026년 8월 일반 15%, 소규모 사업자 5%를 법원에 제안했고, 미국 대법원은 6월 30일 이 사건을 심리하기로 했다([AppleInsider](https://appleinsider.com/articles/26/09/14/apple-standing-its-ground-in-epics-app-store-fee-suit), [미국 대법원](https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/25-1311.html)). 결론에 따라 수수료가 생길 수 있다.
+- **Apple(미국)**: 미국 스토어프런트 앱은 별도 권한 없이 외부 결제 링크를 넣을 수 있고([Apple 심사 지침](https://developer.apple.com/app-store/review/guidelines/)), 지금은 그 결제에 수수료가 없다. 다만 미국 연방대법원은 2026년 6월 30일 이 사건을 심리하기로 했고, Apple은 8월에 일반 15%, 소규모 사업자 5%의 수수료를 법원에 제안했다([AppleInsider](https://appleinsider.com/articles/26/09/14/apple-standing-its-ground-in-epics-app-store-fee-suit), [미국 연방대법원](https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/25-1311.html)). 결론에 따라 수수료가 생길 수 있다.
 - **Google(미국)**: 2026년 6월 30일부터 첫 100만 달러에 대해 Play 결제는 10%에 결제 수수료 5%, 웹 링크는 10%다([Android 개발자 블로그](https://android-developers.googleblog.com/2026/06/play-expanded-billing.html)).
-- **계산**: 판매대행(MoR)까지 맡기면 결제 비용은 약 6.4% + 30센트다(Stripe 2.9% + 30센트에 판매대행 3.5%, [Stripe](https://stripe.com/pricing)). 미국 iOS에서 15% 대신 이 비용을 내면 $19.99 상품은 약 7%p, $4.99 상품은 약 3%p가 남는다. 미국 안드로이드에서는 아끼는 5%p보다 결제 비용이 크다(자체 계산).
-- **도구**: Unity IAP 5.4는 D2C 결제 대행사와 Unity Webshops를 지원한다. Webshops에는 Unity 수수료가 없고 Stripe나 Coda의 결제 수수료만 든다([Unity](https://unity.com/blog/unity-iap-d2c-launch-blog)). 게임 전문 업체로는 Stash와 Xsolla가 있다(수수료 약 5%부터, [Stash](https://stash.gg/legacy/fee-calculator), [Metaplay](https://metaplay.io/blog/picking-the-right-web-shop-for-your-mobile-game)).
+- **계산**: 판매대행(MoR)까지 맡기면 결제 비용은 약 6.4% + 30센트다(Stripe 2.9% + 30센트에 판매대행 3.5%, [Stripe](https://stripe.com/pricing)). 미국 iOS에서 15% 대신 이 비용을 내면 $19.99 상품은 약 7%p, $4.99 상품은 약 2.6%p가 남는다. 미국 안드로이드에서는 아끼는 5%p보다 결제 비용이 크다(자체 계산).
+- **도구**: Unity IAP 5.4는 D2C 결제 대행사와 Unity Webshops를 지원한다. Webshops에는 Unity 수수료가 없고 Stripe나 Coda의 결제 수수료만 든다([Unity](https://unity.com/blog/unity-iap-d2c-launch-blog)). 게임 전문 업체로는 Stash와 Xsolla가 있다(수수료 약 5%, Stash 계산기 기준 결제 비용을 포함한 총비용은 약 10%, [Stash](https://stash.gg/legacy/fee-calculator), [Metaplay](https://metaplay.io/blog/picking-the-right-web-shop-for-your-mobile-game)).
 - **붙일 때의 규칙**: 웹 상점도 같은 계정과 장부를 쓴다. $19.99 상한과 월 한도는 두 경로를 합쳐 계산하고, 미성년자 계정은 기본적으로 스토어 결제만 쓴다.
-- **판단 시점**: 글로벌 출시 뒤 미국 iOS 매출에서 아낄 수 있는 몫(약 3\~7%)이 웹 상점의 구축·운영비를 넘고, 수수료 소송의 방향이 보일 때 붙인다.
+- **판단 시점**: 글로벌 출시 뒤 미국 iOS 매출에서 아낄 수 있는 몫(약 2.6\~7%p)이 웹 상점의 구축·운영비를 넘고, 수수료 소송의 방향이 보일 때 붙인다.
 
 **RevenueCat은 대비책으로 둔다.** 스토어 결제를 감싸 영수증 검증, 구독 상태, 매출 지표를 주는 서비스다. 월 추적 매출 2,500달러까지 무료이고, 그 뒤로는 일회성 구매를 포함한 총매출의 1%다([RevenueCat](https://www.revenuecat.com/pricing)). Nakama가 같은 일을 하므로 지금은 쓰지 않고, Nakama의 결제 처리에서 풀기 어려운 문제가 생기면 꺼낸다.
 
 ## 개발 운영
 
-작은 팀이 매주 빌드를 내고 시즌을 고정 주기로 운영하려면(기획서 15장) 사람이 하던 확인을 기계에 넘겨야 한다. 저장소와 빌드는 \*\*GitHub과 GitHub Actions(GameCI·fastlane)\*\*로, 크래시는 **Crashlytics**로, 현지화는 **Unity Localization과 Crowdin**으로, 고객 지원은 **Zendesk**로 한다.
+작은 팀이 매주 빌드를 내고 시즌을 고정 주기로 운영하려면(기획서 15장) 사람이 하던 확인을 기계에 넘겨야 한다. 저장소와 빌드는 **GitHub과 GitHub Actions**(GameCI·fastlane)로, 크래시는 **Crashlytics**로, 현지화는 **Unity Localization과 Crowdin**으로, 고객 지원은 **Zendesk**로 한다.
 
 ### 저장소와 빌드
 
@@ -294,10 +294,10 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 ### 자동 테스트
 
 1. **단위 테스트**: 코어는 엔진 밖의 평범한 .NET 테스트로, 화면과 입력 처리는 Unity Test Framework로 테스트한다. 코어 테스트는 Unity 없이 돌아 수초 안에 끝난다.
-2. **결정론 테스트**: 골든 입력 로그(대표 판 수백 개)를 x86-64 서버와 ARM64 안드로이드 실기기에서 돌려 틱별 체크섬을 비교하고, 다르면 병합을 막는다(4장). 실기기는 Firebase Test Lab의 게임 루프 테스트로 돌린다. Blaze 요금제는 실기기 하루 30분이 무료이고, 그 뒤는 기기·시간당 5달러다([Firebase](https://firebase.google.com/docs/test-lab/usage-quotas-pricing)).
+2. **결정론 테스트**: 골든 입력 로그(대표 판 수백 개)의 틱별 체크섬을 병합마다 x86-64 서버에서 확인하고, 매일 밤 ARM64 안드로이드와 iOS 실기기에서도 같은 값이 나오는지 비교한다. 서버에서 어긋나면 병합을, 실기기에서 어긋나면 출시 빌드를 막는다(4장). 안드로이드는 Firebase Test Lab의 게임 루프 테스트로, iOS는 사무실 실기기로 돌린다. Blaze 요금제는 실기기 하루 30분이 무료이고, 그 뒤는 기기·시간당 5달러다([Firebase](https://firebase.google.com/docs/test-lab/usage-quotas-pricing)).
 3. **봇 대량 플레이**: 검증 작업자와 같은 .NET 이미지로 Cloud Run 작업에서 수천\~수만 판을 돌려 밸런스, 운의 폭, 새 시드를 검사하고(기획서 12·15·16장), 결과는 BigQuery와 대시보드로 본다. 시즌 데이터는 이 검사를 통과해야 공개한다.
 4. **사전 출시 보고서**: Play Console은 테스트 트랙에 올린 빌드를 여러 기기에서 자동으로 돌려 안정성·호환성·성능·접근성 문제를 보고한다([Google Play](https://support.google.com/googleplay/android-developer/answer/9842757)).
-5. **실기기 선반**: 갤럭시 보급형·중급형과 아이폰 하위 모델을 사무실에 두고, 주간 빌드마다 프레임·메모리·발열을 재 저사양 예산(3장)을 지키는지 본다.
+5. **실기기 선반**: 갤럭시 보급형·중급형과 아이폰 하위 모델을 사무실에 두고, 주간 빌드마다 프레임·메모리·발열을 재서 저사양 예산(3장)을 지키는지 본다.
 
 ### 크래시와 성능 모니터링
 
@@ -332,25 +332,25 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 
 | 층 | 막는 것 | 구현 |
 | --- | --- | --- |
-| 서버 판정 | 재화·보상·기록 조작 | 재화와 보상은 서버가 확정하고(5장), 리그 기록은 입력 로그를 다시 돌려 확정한다(4장). 클라이언트가 보내는 것은 입력뿐이다 |
-| 규칙 검사 | 불가능한 입력 | 코어가 모든 입력을 규칙대로 검사하므로, 조작된 클라이언트도 규칙 안의 입력만 낼 수 있다. 협동 판은 두 기기의 상태 해시를 비교한다(4장) |
+| 서버 판정 | 재화·보상·기록 조작 | 재화와 보상은 서버가 확정하고(5장), 리그·협동·토벌 판의 결과는 입력 로그를 다시 돌려 확정한다(4장). 클라이언트가 보내는 것은 입력뿐이다 |
+| 규칙 검사 | 불가능한 입력 | 조작된 클라이언트가 규칙 밖의 입력을 보내도, 서버가 다시 돌리는 판에서는 코어가 그 입력을 거부하고, 협동 판에서는 상대 기기와의 해시 불일치로 드러난다(4장) |
 | 결제 검증 | 가짜 영수증, 영수증 재사용 | 서버 검증과 거래 ID 중복 차단(7장) |
 | 기기 확인 | 변조 앱, 자동화 클라이언트, 요청 재전송 | Play Integrity는 Play에서 설치한 정품 앱이 인증된 기기에서 도는지 판정하고([Google Play](https://developer.android.com/google/play/integrity/overview)), App Attest는 Secure Enclave 키로 요청마다 서명하게 한다([Apple](https://developer.apple.com/documentation/devicecheck/establishing-your-app-s-integrity)). 세션을 시작할 때와 보상을 받을 때 확인한다 |
 | 이상 탐지 | 사람이 아닌 플레이, 비정상적인 재화 흐름 | 입력 간격·정확도가 사람의 범위를 벗어난 리그 기록과 짧은 시간의 비정상적인 재화 흐름을 검토 대기열로 보낸다 |
 
-기기 확인을 통과하지 못해도 플레이는 막지 않고, 리그 순위와 희귀 보상에서만 뺀다. 루팅한 기기를 쓰는 평범한 플레이어까지 잃지 않기 위해서다. Play Integrity의 기본 한도는 하루 토큰 요청과 복호화가 각각 1만 건이고, 늘리려면 구글 클라우드 프로젝트를 연결해 신청한다([Google Play](https://developer.android.com/google/play/integrity/setup)). 예를 들어 하루 5만 명이 다섯 번씩 확인하면 25만 건이므로(자체 계산), 소프트 런칭 전에 상향을 신청한다.
+기기 확인을 통과하지 못해도 플레이는 막지 않고, 리그 순위와 희귀 보상에서만 뺀다. 루팅한 기기를 쓰는 평범한 플레이어까지 잃지 않기 위해서다. Play Integrity의 기본 한도는 하루 토큰 요청과 복호화가 각각 1만 건이고, 늘리려면 구글 클라우드 프로젝트를 연결해 신청한다([Google Play](https://developer.android.com/google/play/integrity/setup)). 예를 들어 하루 5만 명이 세션 시작(하루 4\~6회)과 판 보상(하루 4\~12판)마다 확인하면 하루 40만\~90만 건이므로(자체 계산, 기획서 9장 기준), 소프트 런칭 전에 상향을 신청한다.
 
 ### 연령 확인
 
-보호 정책 모듈은 스토어의 연령 신호와 첫 실행의 나이 확인 화면을 입력으로 받아 연령대와 보호자 동의 상태를 정한다. 나이 경계는 지역마다 필요한 값(한국은 14세)을 골라 요청한다. 연령 신호는 보호 목적으로만 쓰고 분석·광고로 보내지 않는다.
+보호 정책 모듈은 스토어의 연령 신호와 첫 실행의 나이 확인 화면을 입력으로 받아 연령대와 보호자 동의 상태를 정한다. 나이 경계는 지역마다 필요한 값(한국은 개인정보 동의 기준인 14세와 성년 기준인 19세)을 골라 요청한다. 연령 신호는 보호 목적으로만 쓰고 분석·광고로 보내지 않는다.
 
 | 신호 | 주는 정보 | 범위와 제약 |
 | --- | --- | --- |
 | Apple Declared Age Range(iOS 26 이상) | 개발자가 정한 나이 경계(최대 3개)를 기준으로 한 2년 이상 폭의 연령대, 나이를 신고한 방식, 보호자 통제 여부, 규제 지역 여부([Apple](https://developer.apple.com/documentation/declaredagerange/requesting-people-share-their-age-range-with-your-app)) | 전 세계에서 쓸 수 있다. 텍사스에서는 13세 미만·13\~15세·16\~17세·18세 이상 구분이 2026년 6월 4일 이후 만든 Apple 계정에 적용된다([Apple](https://developer.apple.com/news/?id=sg176nne)) |
-| Google Play Age Signals(베타) | 공유 상태(공유·미공유·확인 필요), 연령 범위, 정보 출처, 중요한 변경에 대한 보호자 승인일([Google Play](https://developer.android.com/google/play/age-signals/overview)) | 브라질(2026년 3월 17일부터)과 5월 28일 이후 만든 텍사스 계정에서 동작한다. 광고와 분석에는 쓸 수 없다(같은 문서) |
+| Google Play Age Signals(베타) | 공유 상태(공유·미공유·확인 필요), 연령 범위, 정보 출처, 중요한 변경에 대한 보호자 승인일([Google Play](https://developer.android.com/google/play/age-signals/overview)) | 브라질(2026년 3월 17일부터)과 2026년 5월 28일 이후 만든 텍사스 계정에서 동작한다. 광고와 분석에는 쓸 수 없다(같은 문서) |
 | 첫 실행 나이 확인 | 자기 신고한 생년 | 스토어 신호가 없을 때의 기본값이다. 특정 답을 유도하지 않는 중립 화면으로 만든다 |
 
-미국 주법은 글로벌 출시 전에 대부분 시행된다. 텍사스 SB 2420은 1심의 시행 금지 명령이 항소심에서 정지됐고, 연방대법원이 2026년 7월 6일 이를 풀지 않아 시행 중이다([미국 대법원](https://www.supremecourt.gov/orders/courtorders/070626zr1_dc8f.pdf)). 앨라배마와 캘리포니아는 2027년 1월 1일([Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/alabama-enacts-app-store-accountability-act-requiring-age-verification), [캘리포니아 의회](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1043)), 유타는 5월 6일([유타 의회](https://le.utah.gov/Session/2026/bills/enrolled/HB0498.pdf)), 루이지애나는 7월 1일([루이지애나 의회](https://legis.la.gov/legis/BillInfo.aspx?s=26RS&b=HB977))부터다. 유타법은 스토어 연령 정보에 기대면 책임을 덜어 주고, 캘리포니아법은 앱이 실행될 때 연령 신호를 요청하게 한다. 그래서 스토어 연령 신호는 1단계부터 붙인다.
+미국 주법은 글로벌 출시 전에 대부분 시행된다. 텍사스 SB 2420은 1심의 시행 금지 명령이 항소심에서 정지됐고, 미국 연방대법원이 2026년 7월 6일 이 정지를 풀지 않아 시행 중이다([미국 연방대법원](https://www.supremecourt.gov/orders/courtorders/070626zr1_dc8f.pdf)). 앨라배마와 캘리포니아는 2027년 1월 1일([Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/alabama-enacts-app-store-accountability-act-requiring-age-verification), [캘리포니아 의회](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1043)), 유타는 2027년 5월 6일([유타 의회](https://le.utah.gov/Session/2026/bills/enrolled/HB0498.pdf)), 루이지애나는 2027년 7월 1일([루이지애나 의회](https://legis.la.gov/legis/BillInfo.aspx?s=26RS&b=HB977))부터다. 유타법은 스토어 연령 정보에 기대면 책임을 덜어 주고, 캘리포니아법은 앱이 실행될 때 연령 신호를 요청하게 한다. 그래서 스토어 연령 신호는 1단계부터 붙인다.
 
 ### 미성년자 보호 기본값
 
@@ -361,7 +361,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 | 개인정보 | 14세 미만은 법정대리인 동의 전까지 게임에 꼭 필요한 정보만 처리한다 | 개인정보보호법 제22조의2([국가법령정보센터](https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270351)) |
 | 채팅 | 자유 채팅을 끄고 정해진 문구만 허용한다. 모르는 사람과의 1:1 대화를 막는다 | 기획서 17장 |
 | 푸시 | 광고성 푸시를 보내지 않는다 | 6장 운영 규칙 |
-| 무료 상자 | 지역 정책에 따라 확정 보상으로 바꿀 수 있게 만든다 | 브라질은 미성년자가 이용할 수 있는 게임의 확률형 상자를 금지했고(기획서 17장), EU KIDS Act 제안도 확률형 보상 노출을 막도록 했다(아래) |
+| 무료 상자 | 지역 정책에 따라 확정 보상으로 바꿀 수 있게 만든다 | 브라질은 미성년자가 이용할 수 있는 게임의 확률형 상자를 금지했고(기획서 17장), EU는 2026년 9월 30일 확률형 보상을 겨냥한 소비자 보호 공동 조치도 시작했다(기획서 17장) |
 
 ### 한국의 등급과 확률 공개
 
@@ -371,15 +371,15 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 
 ### 개인정보
 
-- **최소 수집**: 기기·스토어 로그인 ID와 게임 데이터만 쓴다. 이름·전화번호를 받지 않고, 생년은 연령대로 바꾼 뒤 원본을 지운다.
+- **최소 수집**: 기기·스토어 로그인 ID와 게임 데이터만 쓴다. 이름·전화번호를 받지 않고, 생년은 연령대와 그 연령대가 끝나는 연월만 남기고 원본을 지운다. 그래야 나이가 바뀔 때 보호 정책을 다시 적용할 수 있다.
 - **데이터 위치**: 핵심 데이터(Nakama, BigQuery)는 서울 리전에 둔다. Firebase, Zendesk처럼 해외에서 처리되는 서비스는 개인정보 처리방침에 이전 국가와 항목을 적는다.
-- **계정 삭제**: 앱 안에서 계정을 지울 수 있게 하고([Apple 심사 지침](https://developer.apple.com/app-store/review/guidelines/) 5.1.1(v)), Google Play에는 웹 삭제 요청 링크도 등록한다. 계정을 멈추는 것만으로는 안 되고 관련 데이터를 지워야 한다([Google Play](https://support.google.com/googleplay/android-developer/answer/13327111)). 삭제 요청은 Nakama, BigQuery, Zendesk, MMP의 사용자 데이터를 한 번에 지우는 작업으로 처리한다.
+- **계정 삭제**: 앱 안에서 계정을 지울 수 있게 하고([Apple 심사 지침](https://developer.apple.com/app-store/review/guidelines/) 5.1.1(v)), Google Play에는 웹 삭제 요청 링크도 등록한다. 계정을 멈추는 것만으로는 안 되고 관련 데이터를 지워야 한다([Google Play](https://support.google.com/googleplay/android-developer/answer/13327111)). 삭제 요청은 Nakama, Satori, BigQuery, Firebase, Zendesk, MMP의 사용자 데이터를 한 번에 지우는 작업으로 처리한다. 결제 장부와 확률 기록처럼 법으로 보관해야 하는 기록은 가명 처리해 정해진 기간 남긴다(보관 기간은 법률 검토로 정한다).
 - **스토어 표시**: Apple 개인정보 라벨과 Google 데이터 보안 양식을 실제 SDK 목록과 맞추고, SDK를 더할 때마다 고친다.
-- **EU**: EU 출시 때 GDPR을 적용한다. 정보 처리 동의 연령은 16세이고 회원국이 13세까지 낮출 수 있다([GDPR 제8조](https://gdpr-info.eu/art-8-gdpr/)). 2026년 9월 17일 발표된 EU KIDS Act 제안은 정기적으로 접속하지 않았다고 불이익이나 혜택 손실을 주는 설계를 막고, 모르는 사람과의 접촉 보호와 확률형 보상 노출 차단을 요구한다([EU 집행위원회](https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en)). EU 출시 전에 연속 접속 보상과 무료 상자를 다시 본다.
+- **EU**: EU 출시 때 GDPR을 적용한다. 정보 처리 동의 연령은 16세이고 회원국이 13세까지 낮출 수 있다([GDPR 제8조](https://gdpr-info.eu/art-8-gdpr/)). 2026년 9월 17일 발표된 EU KIDS Act 제안은 온라인 게임에도 적용되며, 과도한 이용을 부르는 보상 장치와 수면 시간의 푸시 알림을 제한하고 모르는 사람의 원치 않는 접촉을 금지한다([EU 집행위원회](https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en)). EU 출시 전에 연속 접속 보상, 야간 푸시, 무료 상자를 다시 본다.
 
 ## 단계별 도입 계획과 비용
 
-기술도 기획서 18장의 관문을 따라 붙인다. 관문을 넘기 전에는 다음 단계의 서비스에 돈을 쓰지 않는다. 0단계는 엔진과 결정론 코어만으로 재미를 검증하고, 돈이 드는 관리형 서비스는 실제 플레이어를 받는 2단계에 몰린다.
+기술도 기획서 18장의 관문을 따라 붙인다. 관문을 넘기 전에는 다음 단계의 서비스에 돈을 쓰지 않는다. 0단계는 엔진과 결정론 코어만으로 재미를 검증한다. 1단계는 비공개 테스트(1천\~3천 명, 기획서 18장)에 필요한 서버와 분석만 붙이고, 돈이 많이 드는 관리형 서비스는 일반 플레이어를 받는 2단계에 몰린다.
 
 ![기술은 필요해지는 단계에 붙인다](images/tech-stages.png)
 
@@ -392,7 +392,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 | 단계 끝 | 기술 지표 | 이유 |
 | --- | --- | --- |
 | 0단계 | 골든 로그 수백 개의 체크섬이 ARM64와 x86-64에서 같다. 서버에서 한 판을 다시 돌리는 데 CPU 0.3초 이하(설계 가정) | 1단계의 협동과 리그 검증이 모두 결정론에 기대고, 검증 비용은 판당 CPU 시간에 비례한다 |
-| 1단계 | 협동 판 비정상 종료 2% 미만(기획서 18장 관문 2), 30초 안 재접속 성공, 리그 기록 검증이 제출 뒤 1분 안에 끝남(설계 가정), 크래시·ANR 각각 0.5%·0.2% 이하(3장) | 실제 플레이어를 받기 전에 협동과 리그가 안정적이어야 한다 |
+| 1단계 | 협동 판 비정상 종료 2% 미만(기획서 18장 관문 2), 30초 안 재접속 성공, 리그 기록 검증이 제출 뒤 1분 안에 끝남(설계 가정), 크래시·ANR 각각 0.5%·0.2% 이하(3장) | 소프트 런칭에서 일반 플레이어를 받기 전에, 비공개 테스트에서 협동과 리그가 안정적이어야 한다 |
 | 2단계 | 결제 지급 누락·중복 0건, 환불·해지 경로 점검 완료, 전날 데이터가 아침까지 대시보드에 반영됨 | 매출과 실험 판정의 숫자를 믿을 수 있어야 글로벌 출시에 돈을 쓴다 |
 | 3단계 | 지역별 협동 지연과 비정상 종료율, 미국 iOS 매출 비중 | 지역별 릴레이(4장)와 웹 상점(7장)을 붙일지 정한다 |
 
@@ -400,7 +400,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 
 | 역할 | 합류 | 맡는 기술 |
 | --- | --- | --- |
-| 기획 겸 클라이언트(리드) | 0단계 | 결정론 코어 설계와 규칙 코드, 밸런스 시뮬레이터, 기술 결정 |
+| 기획 겸 클라이언트(리드) | 0단계 | 결정론 코어 설계와 규칙 코드, 밸런스 시뮬레이터, 0단계 골든 로그 CI(1단계에 서버 담당에게 넘긴다), 기술 결정 |
 | 클라이언트 | 0단계 | Unity 화면·입력·UI, 리플레이 재생기와 하이라이트 영상, 결제·연령 신호의 클라이언트 연동 |
 | 아트 | 0단계 | 2D 파이프라인(아틀라스·애니메이션), 앱 용량과 메모리 예산 |
 | 서버 | 1단계 | Nakama·Hiro 설정과 확장 코드, 협동 릴레이, 기록 검증 작업자, 결제 장부, 보호 정책 모듈, CI/CD와 클라우드 |
@@ -416,7 +416,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 
 | 항목 | 0단계 | 1단계 | 2단계 | 근거 |
 | --- | --- | --- | --- | --- |
-| 게임 서버(Nakama·Hiro 호스팅) | 0(로컬) | 600 | 1,000 | Heroic Cloud 단일 노드와 고가용성 구성(5장). 1단계 개발 환경 요금은 견적을 받는다 |
+| 게임 서버(Nakama·Hiro 호스팅) | 0(로컬) | 600 | 1,000 | Heroic Cloud 단일 노드와 고가용성 구성(5장). 개발·스테이징 환경(8장) 요금은 견적을 받아 더한다 |
 | 라이브옵스(Satori) | 0 | 0 | 600 | 6장 |
 | 검증·봇 작업자(Cloud Run) | 0 | 0\~10 | 10\~50 | 작업은 매달 24만 vCPU초가 무료이고 그 뒤로 사용량만큼 낸다([Google Cloud](https://cloud.google.com/run/pricing)). 판당 CPU 0.3초를 가정했다 |
 | 데이터(BigQuery·스트리밍 내보내기) | 0 | 0\~10 | 10\~50 | 6장 |
@@ -428,7 +428,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 | 스토어 개발자 계정 | 약 8 | 약 8 | 약 8 | Apple 연 99달러, Google Play 1회 25달러 |
 | **합계(라이선스 제외)** | **약 10** | **약 700** | **약 1,900** |  |
 | Unity Pro(매출·투자 20만 달러 초과 시) | 3석 약 580 | 5석 약 960 | 7석 약 1,350 | 좌석당 연 2,310달러(3장) |
-| Hiro 라이선스 | 0 | 견적 | 견적 | 개발자당 연간 라이선스(5장) |
+| Hiro 라이선스 | 0 | 견적 | 견적 | 과금 방식은 견적으로 확인(5장) |
 
 글로벌 출시 뒤에는 비용이 사용량을 따라 늘어난다. Nakama는 CPU 하나에 월 400달러, DB CPU 하나에 200달러씩 늘고(5장), MMP는 무료 구간 뒤 전환당 0.05\~0.07달러(6장), 웹 상점은 결제액의 약 6.4% + 30센트다(7장). 서버·도구 비용은 매달 매출 대비 비율로 보고, 크게 늘어난 항목은 그때 대안(직접 호스팅, 다른 MMP)과 다시 비교한다.
 
@@ -448,7 +448,7 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 | 사용량 비용 급증 | 매출 대비 월 비용, BigQuery 쿼리량, Play Integrity 한도 | 클라우드 예산 경보, 날짜별로 나눈 테이블, 한도 상향 사전 신청(9장) | 직접 호스팅, 다른 MMP(10장) |
 | 개인정보 사고 | 비정상 접근, 대량 조회 | 최소 수집(9장), 운영 도구 권한 분리와 감사 로그(8장), 통지·신고 절차를 출시 전에 정한다 | 법률 검토와 사고 대응 훈련 |
 
-가장 큰 기술 리스크는 여전히 결정론이다. 협동, 리그 검증, 리플레이, 봇 시뮬레이션이 모두 여기에 기대므로, 0단계에서 골든 로그 CI를 먼저 만들고 가장 먼저 검증한다(10장).
+가장 큰 기술 리스크는 여전히 결정론이다. 협동, 리그 검증, 리플레이, 봇 시뮬레이션이 모두 여기에 기대므로, 0단계에서 골든 로그 CI부터 만들어 가장 먼저 검증한다(10장).
 
 ## 참고 자료
 
@@ -459,16 +459,19 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 - Unity — Unity 6 버전별 지원 기간 ([링크](https://unity.com/releases/unity-6/support))
 - Unity 문서 — C# 컴파일러와 .NET Standard 2.1 ([링크](https://docs.unity3d.com/6000.3/Documentation/Manual/csharp-compiler.html))
 - Unity — Unity IAP 5.4 변경 기록 ([링크](https://docs.unity3d.com/Packages/com.unity.purchasing@5.4/changelog/CHANGELOG.html))
+- Unity 문서 — 안드로이드 요구 사항과 호환성 ([링크](https://docs.unity3d.com/6000.3/Documentation/Manual/android-requirements-and-compatibility.html))
+- Android — Unity 게임의 안드로이드 요건(16KB 페이지 등) ([링크](https://developer.android.com/games/engines/unity/unity-on-android))
+- 사람인 — 'Unity' 채용 공고 검색 ([링크](https://www.saramin.co.kr/zf_user/search/recruit?searchword=Unity))
 - Unity — 요금제 변경과 런타임 요금 취소 ([링크](https://unity.com/products/pricing-updates))
 - Godot — 2026년 4월 모바일 업데이트(스토어 결제 플러그인) ([링크](https://godotengine.org/article/godot-mobile-update-apr-2026/))
 - Godot 문서 — C# 지원 범위 ([링크](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/index.html))
+- GitHub — Godot StoreKit 2 플러그인 ([링크](https://github.com/godot-sdk-integrations/godot-storekit2))
 - PR Newswire — Cocos 4 오픈소스 공개 ([링크](https://www.prnewswire.com/news-releases/cocos-4-is-here-fully-open-source-302652264.html))
 - Defold — 1.13.2 릴리스 ([링크](https://defold.com/2026/09/29/Defold-1-13-2/))
 - Unity 문서 — UI 시스템 비교 ([링크](https://docs.unity3d.com/6000.3/Documentation/Manual/UI-system-compare.html))
 - Esoteric Software — Spine 라이선스 가격 ([링크](https://esotericsoftware.com/spine-purchase))
 - Google Play — 앱 크기 제한 ([링크](https://support.google.com/googleplay/android-developer/answer/9859372))
 - Apple — On-Demand Resources 크기 제한과 중단 예정 ([링크](https://developer.apple.com/help/app-store-connect/reference/on-demand-resources-size-limits/))
-- Unity 문서 — 안드로이드 요구 사항과 호환성 ([링크](https://docs.unity3d.com/6000.3/Documentation/Manual/android-requirements-and-compatibility.html))
 - Android — Android vitals 기준 ([링크](https://developer.android.com/topic/performance/vitals))
 - Google Play — 대상 API 수준 요구 사항 ([링크](https://support.google.com/googleplay/android-developer/answer/11926878))
 - Android — 16KB 페이지 크기 지원 ([링크](https://developer.android.com/guide/practices/page-sizes))
@@ -482,12 +485,14 @@ Statsig는 2025년 OpenAI가 인수한 뒤 2026년 5월 브랜드와 고객이 A
 - Microsoft — Math.Sin의 플랫폼별 결과 차이 ([링크](https://learn.microsoft.com/en-us/dotnet/api/system.math.sin))
 - Unity 문서 — Burst 컴파일과 결정론 모드 ([링크](https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/compilation-burstcompile.html))
 - Photon — Quantum의 고정 소수점 ([링크](https://doc.photonengine.com/quantum/v3/manual/quantum-ecs/fixed-point))
+- Microsoft — String.GetHashCode의 구현별 차이 ([링크](https://learn.microsoft.com/en-us/dotnet/api/system.string.gethashcode))
 - Heroic Labs — Nakama 서버 권위 매치 ([링크](https://heroiclabs.com/docs/nakama/concepts/multiplayer/authoritative/))
 - Google Cloud — 리전과 영역 ([링크](https://cloud.google.com/compute/docs/regions-zones))
 - Photon — Quantum 3 소개 ([링크](https://doc.photonengine.com/quantum/v3/quantum-intro))
 - Photon — Quantum 가격 ([링크](https://www.photonengine.com/quantum/pricing))
 - Photon — Quantum 치트 방지와 서버 시뮬레이션 ([링크](https://doc.photonengine.com/quantum/v3/manual/cheat-protection))
 - Photon — Realtime 가격 ([링크](https://www.photonengine.com/realtime/pricing))
+- Photon — 게임용 요금제(Gaming Circle·Enterprise Cloud) ([링크](https://www.photonengine.com/gaming))
 - Unity — Gaming Services 가격 ([링크](https://unity.com/products/gaming-services/pricing))
 - Unity 문서 — Relay 리전 ([링크](https://docs.unity.com/en-us/relay/locations-and-regions))
 

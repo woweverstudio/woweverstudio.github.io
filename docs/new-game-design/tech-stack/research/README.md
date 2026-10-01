@@ -7,6 +7,7 @@
 | [T1_engine_netcode.md](T1_engine_netcode.md) | 엔진 비교, 결정론 시뮬레이션과 고정 소수점, 협동 네트워크(릴레이·Photon·Unity Relay), 저사양 기기 기준 | 52건 |
 | [T2_backend_liveops.md](T2_backend_liveops.md) | 게임 백엔드(Nakama·Hiro·PlayFab·UGS·Firebase 등), 라이브옵스·실험 도구, 데이터 창고, 어트리뷰션 | 69건 |
 | [T3_payments_ops_compliance.md](T3_payments_ops_compliance.md) | 스토어 결제와 서버 검증, 한국 결제·세금, 웹 상점, 연령 확인과 미성년자 보호, 앱 무결성, 개발 운영 도구 | 100건 |
+| [T4_writing_checks.md](T4_writing_checks.md) | 본문을 쓰고 검토하며 추가로 확인한 페이지: Nakama 결제 알림, 환불 심사 API, 한국 수수료 개편, CI·테스트 도구 가격, Cloud Run 가격, EU KIDS Act | 17건 |
 
 ## 검증 표시
 
