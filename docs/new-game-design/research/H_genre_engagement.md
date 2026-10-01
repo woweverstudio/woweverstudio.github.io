@@ -184,9 +184,9 @@ Session growth in 2025: strategy +57%, casual +37%, hyper casual +31%, simulatio
   - casual: "primarily through in-app purchases, but also incorporate ads";
   - hybridcasual: "around 50/50 ad and in-app purchases revenue";
   - hypercasual: "almost 100% through ads".
-- US hybridcasual split, 2025, top 1,000 by downloads per genre [H6 p.26]:
+- Hybridcasual split across the US, Japan, the UK and Brazil, 2025, top 1,000 by downloads per genre and country [H6 p.26]:
 
-| Hybridcasual class (US, 2025) | IAP share | Ad share |
+| Hybridcasual class (US, JP, UK, BR; 2025) | IAP share | Ad share |
 |---|---|---|
 | Action & Strategy | **81.9%** | 18.1% |
 | Sports & Racing | 71.0% | 29.0% |

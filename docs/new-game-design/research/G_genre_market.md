@@ -26,13 +26,13 @@
 | **Puzzle (all)** | ST $14.4B gross; AM $8.7B net | ST +14%; AM +11.1%; H1'26 ST $8.07B (≈+20%) | 2024: top-3 = 34.6% of puzzle IAP; titles >2 yrs old = 91.5% | Casual puzzle is IAP-led, yet puzzle earns 53% of all game *ad* revenue | Royal Kingdom; Gossip Harbor; Tasty Travels; Pixel Flow!; Color Block Jam | Strong incumbency; growth only in new sub-formats | G1 G2 G3 G4 G5 G7 |
 | Match-3 (swap/classic) | AM ≈$4.8B net | AM +0.1% (flat); ST "Match Swap" $1.81B in Q2'26, "plateau" | Dream Games' 2 titles >30% of match-3; only 4 of 367 new 2025 match-3 games ever hit $100K/month | IAP-led; Candy Crush ads = 10–15% of revenue | Royal Kingdom (Dream Games; global launch Nov 2024; >$510M net IAP by mid-2026) | Not feasible (level treadmill + UA capital) | G3 G5 G7 G9 G10 |
 | Merge-2 | AM $1.4B net; ST H1'26 $1.91B gross | AM +80%; H1'26 AM +74%, ST "nearly doubled" | AM top-10 ≈80%; Gossip Harbor $550M = 33% | IAP via LiveOps offers at $1–25 | Gossip Harbor (Microfun; $100M in Mar 2026); Tasty Travels (Century; $127M net H1'26) | Oligopoly + narrative-creative UA war | G3 G5 G9 G10 |
-| Sort / block / screw | AM: sort $279M, block $213M, screw $177M (net) | Sort ×2, block ×10, screw ×2; H1'26: the three combined $600M; sort +229%, block +46% | 840 sort and 2,000+ block launches in H1'26; Color Block Jam and Pixel Flow lead | Hybrid: US hybridcasual Lifestyle & Puzzle = 59% IAP / 41% ads; Pixel Flow ≈76% IAP (derived); Block Blast ads only | Pixel Flow! (Loom Games, ~20 staff; Aug 2025; $125M net IAP in under a year; >$1B valuation) | Buildable; IAP-only forgoes their ad share | G3 G7 G9 G10 G31 G32 |
+| Sort / block / screw | AM: sort $279M, block $213M, screw $177M (net) | Sort ×2, block ×10, screw ×2; H1'26: the three combined $600M; sort +229%, block +46% | 840 sort and 2,000+ block launches in H1'26; Color Block Jam and Pixel Flow lead | Hybrid: hybridcasual Lifestyle & Puzzle (US, JP, UK and BR combined) = 59% IAP / 41% ads; Pixel Flow ≈76% IAP (derived); Block Blast ads only | Pixel Flow! (Loom Games, ~20 staff; Aug 2025; $125M net IAP in under a year; >$1B valuation) | Buildable; IAP-only forgoes their ad share | G3 G7 G9 G10 G31 G32 |
 | Puzzle-RPG | 2025 not found (2024: 2.66% of IAP ≈ $2.17B, derived) | AM −28.2% (period to Oct'25); Japan −22% | not found | IAP | none found | Declining and Japan-centric | G1 G8 G21 |
 | Board/dice (coin looters) + tabletop | AM coin looters $2.4B net; tabletop $933.5M net | Coin looters −3%, H1'26 −11%; tabletop +7.4%; ST "board games" +23% in Q1'26 | Coin looters: top-3 ≈90%; none of 42 new H1'26 launches passed $100K/month | IAP + heavy D2C (>50% of US IAP for some titles) | Monopoly GO (2023, [E26]); Top Tycoon ($29.6M in 2025) | Not feasible (IP + nine-figure UA; casino-like) | G3 G6 G9 G10 |
 | Word / trivia | not found | not found | not found | Ad-led: PlaySimple CY2025 ads ₹1,916.9 Cr vs IAP ₹333.6 Cr (≈85% ads, derived) | none found | Poor fit for IAP-only | G3 G35 |
 | Simulation: farm / cozy / life-sim | AM simulation $4.8B net (casual farming $955M; life sim $135M) | AM +6.2% (farming −2%, life sim +1.4%); ST −$717M (derived; conflicts); H1'26 farming +15%, life sim +76% | Township >42% of farming; ST 2024 sim top-3 = 42.0% | IAP; subscriptions emerging (Goodville >12% of revenue) | Heartopia (XD; Jan 2026; >$130M IAP; $20M/month, a simulation record); My Garden Tale (>90% China) | Content-heavy; new entrants are Chinese | G2 G3 G9 G10 G38 |
 | Tycoon / idle tycoon | not found (AM time-management $135M net) | Time management −12% | not found | Ad-heavy (AM hypercasual simulation IAP only $18.3M on 1.8B downloads) | Pizza Ready! (#5 by downloads in 2025) | Poor fit for IAP-only | G2 G3 G9 |
-| Casual action / hybridcasual (survivors-like, Archero-like) | ST hybridcasual model 2024 $3.1B gross; 2025 $ value not stated | ST +20%; AM hypercasual incl. hybrid ≈+80% | not found | US hybridcasual Action & Strategy = 81.9% IAP / 18.1% ads | Archero 2 (Jan 2025; $156M lifetime IAP); Capybara Go ($139M); Dicero (2026) | Feasible scope; crowded; 50.6% of downloads are paid display | G1 G2 G3 G33 G40 |
+| Casual action / hybridcasual (survivors-like, Archero-like) | ST hybridcasual model 2024 $3.1B gross; 2025 $ value not stated | ST +20%; AM hypercasual incl. hybrid ≈+80% | not found | hybridcasual Action & Strategy (US, JP, UK and BR combined) = 81.9% IAP / 18.1% ads | Archero 2 (Jan 2025; $156M lifetime IAP); Capybara Go ($139M); Dicero (2026) | Feasible scope; crowded; 50.6% of downloads are paid display | G1 G2 G3 G33 G40 |
 | 4X strategy | 2024 ≈$8.15B (9.98% of IAP, derived); strategy genre 2025 ST $20.2B / AM $13.3B net | 4X AM +21%; strategy ST +20%; H1'26 strategy −5%, 4X down two quarters after a $3.09B Q4'25 peak | AM top-10 = 64% (47% in 2023); $99 offers ≈30% of top titles' revenue | IAP, plus web-store currencies | Kingshot (Feb 2025; $811.9M in year 1 [E29]); Last Z (2024); Lands of Jail (small publisher) | Not feasible | G1 G2 G3 G4 G5 |
 | Tower defense / co-op defense | not found | AM "Tactics" subgenre +35% (definition not given) | not found | IAP (Lucky Defense: no forced ads, VIP subscription [E35]) | Lucky Defense (111%, May 2024; ₩120B+ cumulative, 7.5M+ downloads); Clash of Critters (Farlight, May 2026; $24M IAP by Aug) | Best strategy niche for a small team; proven in Korea | G3 G36 G38 |
 | Auto-battler / RTS | 2024 RTS 1.68% of IAP ≈ $1.37B (derived; #1 TFT) | AM RTS ≈ flat (chart); Clash Royale +147% | not found | IAP | Clash Royale revival ($627.5M gross in 2025) | Needs PvP liquidity + balance team | G1 G3 G11 G18 |
@@ -46,7 +46,7 @@
 | Shooter / battle royale | AM $3.3B net; ST +$825M vs 2024's $4.3B (derived) | AM +14.2%; ST Q1'26 +12% | 2024 top-3 = 53.9%; >2 yrs = 94.7% | IAP (cosmetics) | Delta Force (2025; $492.5M gross; 96% China); Valorant Mobile (China, Aug 2025) | Not feasible | G1 G2 G3 G6 G11 G34 |
 | MOBA | 2024: 5.52% ≈ $4.51B (#1 Honor of Kings) | AM −8%; Honor of Kings $1.68B net (−3%) | Honor of Kings-dominated | Cosmetics IAP | none new found | Not feasible | G1 G3 G5 |
 | Party / social / UGC | AM party games $272.7M net; Roblox store IAP $1.46B net | Party −16.2%; Roblox +30% | Roblox dominant; Eggy Party 98% China | IAP | Eggy Party ($395.7M in 2023 → $158.7M in 2025); Roblox (FY2025 revenue $4.9B) | Not feasible standalone | G3 G11 G25 G26 |
-| Sports & racing | AM sports $1.7B net; racing $361.0M net | Sports −3.9%; racing −11.4%; ST −$14M / −$65M (derived) | 2024 top-3: sports 40.8%, racing 50.8%; >2 yrs 88.9% / 94.1% | IAP for licensed sims; US hybridcasual Sports & Racing 71% IAP | none new found | Not feasible (licences) | G1 G2 G3 |
+| Sports & racing | AM sports $1.7B net; racing $361.0M net | Sports −3.9%; racing −11.4%; ST −$14M / −$65M (derived) | 2024 top-3: sports 40.8%, racing 50.8%; >2 yrs 88.9% / 94.1% | IAP for licensed sims; hybridcasual Sports & Racing (US, JP, UK and BR combined) 71% IAP | none new found | Not feasible (licences) | G1 G2 G3 |
 | Social casino (note only) | AM $6.9B net; ST 2024 $11.7B gross | AM −7.6%; ST −$832M (derived); H1'26 US −$648M | 2024 top-3 = 34.7%; >2 yrs = 98.4% | IAP + D2C (≈30% of US top-100 revenue in H1'26 [E8]) | — | Excluded on ethics (gambling-likeness) | G1 G2 G3 G5 |
 
 ---
@@ -148,7 +148,7 @@ Sources: [G1 p.8], [G2 pp.22, 44], [G5]. Paid-display and organic shares are ave
 
 **Monetization**
 - Match/merge are IAP-led: top merge games earn mostly from recurring LiveOps specials priced $1–25 [G3]. Candy Crush's ads are only 10–15% of its revenue [G7].
-- Hybrid puzzles (sort, block, screw) mix IAP and ads. In top hypercasual puzzle games the top 3 offers bring ≈40% of revenue, built on "fail offers" and $2–8 currency bundles [G3]. ST's US split for hybridcasual Lifestyle & Puzzle is 59.0% IAP / 41.0% ads [G2 p.26].
+- Hybrid puzzles (sort, block, screw) mix IAP and ads. In top hypercasual puzzle games the top 3 offers bring ≈40% of revenue, built on "fail offers" and $2–8 currency bundles [G3]. ST's split for hybridcasual Lifestyle & Puzzle across the US, Japan, the UK and Brazil is 59.0% IAP / 41.0% ads [G2 p.26].
 
 **Hits**
 - **Royal Kingdom** (global launch Nov 2024): >$510M net IAP by mid-2026, versus Royal Match's $465M over the same post-launch period [G10].
@@ -236,7 +236,7 @@ Sources: [G1 p.8], [G2 pp.22, 44], [G5]. Paid-display and organic shares are ave
 - ST hybridcasual model: $3.1B in 2024 (+37%) [G1]; +20% in 2025, the only model with meaningful IAP growth [G2, G4].
 - AM's hypercasual segment, which absorbs hybrid titles: revenue up ≈80% in 2025 and 4–5× over three years; arcade hybrids $296M (+39%) [G3].
 
-**Mix.** For US hybridcasual, Action & Strategy is **81.9% IAP / 18.1% ads**, versus 59% IAP for Lifestyle & Puzzle [G2 p.26]. The ST ad-monetization digest reports that top IAP-focused hybridcasual games earn substantially more than ad-dominated ones [G7].
+**Mix.** For hybridcasual across the US, Japan, the UK and Brazil, Action & Strategy is **81.9% IAP / 18.1% ads**, versus 59% IAP for Lifestyle & Puzzle [G2 p.26]. The ST ad-monetization digest reports that top IAP-focused hybridcasual games earn substantially more than ad-dominated ones [G7].
 
 **Hits (AppMagic lifetime IAP, Feb 2026)** [G33]
 - Survivor.io $476M; Archero $265M; Archero 2 $156M; Capybara Go $139M; SOULS $56M.
@@ -374,7 +374,7 @@ Sources: [G1 p.8], [G2 pp.22, 44], [G5]. Paid-display and organic shares are ave
 - **2025:** ST derived change sports −$14M, racing −$65M [G2]. AM: sports $1.7B (−3.9%), racing $361.0M (−11.4%) [G3].
 - **Concentration:** top-3 sports 40.8%, racing 50.8%; titles older than two years: sports 88.9%, racing 94.1% [G1].
 - **Playtime:** realistic sports was 5.73% of time [G1].
-- **Mix:** US hybridcasual Sports & Racing is 71.0% IAP [G2].
+- **Mix:** hybridcasual Sports & Racing (US, JP, UK and BR combined) is 71.0% IAP [G2].
 - No 2023–26 breakout found. Regional sports detail for Korea and Japan: not found.
 
 ### 2.14 Social casino (note only)
