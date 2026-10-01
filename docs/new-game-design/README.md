@@ -2,7 +2,7 @@
 
 작성일: 2026-10-01 · woweverstudio
 
-> 이 문서는 Claude Docs 원본에서 내보낸 사본이다. 근거가 된 분야별 조사 노트는 [research/](research/README.md)에 있다.
+> 이 문서는 Claude Docs 원본에서 내보낸 사본이다. 근거가 된 분야별 조사 노트는 [research/](research/README.md)에 있고, 이 게임을 만들기 위한 기술 스택은 [tech-stack/](tech-stack/README.md)에 있다.
 
 ## 요약
 
